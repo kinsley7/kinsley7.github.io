@@ -1,5 +1,5 @@
 import { Component } from "react";
 
-export interface IComponent extends Component{
+export interface IComponent{
 	classNames ?: string
 }
