@@ -1,0 +1,9 @@
+/* all css files import here */
+@import 'button.css';
+
+/* all colors here 
+:root {
+	--primary-color
+
+	--background-color
+}

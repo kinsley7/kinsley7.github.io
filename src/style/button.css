@@ -1,0 +1,22 @@
+button {
+	@apply flex flex-row p-2;
+	width: 100%
+}
+
+button.pill {
+	@apply rounded-full flex flex-row p-2;
+	max-width: fit-content;
+	background-color: var(--primary-accent-color);
+	border: 1px solid var(--primary-color);
+}
+
+button.pill:hover{
+	background-color: var(--secondary-color-2);
+	color: white;
+}
+
+button.pill:focus{
+	outline: 2px solid var(--secondary-color-2);
+	background-color: var(--secondary-color-2);
+	color: white;
+}
