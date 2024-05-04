@@ -1,9 +1,11 @@
 /* all css files import here */
 @import 'button.css';
 
-/* all colors here 
+ /*all colors here */
 :root {
-	--primary-color
-
-	--background-color
+	--primary-color: #68CDE4;
+	--secondary-color: #4B90A0;
+	--primary-accent: #E8407C;
+	--secondary-accent: #E290B0;
+	--background-color: #FFFBF8;
 }
