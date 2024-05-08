@@ -1,9 +1,11 @@
 button{
-	@apply rounded-full flex flex-row p-2;
+	@apply flex flex-row p-2;
 	width: 100%;
+	align-items: center;
 }
 
 button.primary {
+	@apply rounded-full px-2 py-1;
 	max-width: fit-content;
 	background-color: var(--primary-color);
 	color: white;
@@ -16,4 +18,13 @@ button.primary:hover{
 button.primary:focus{
 	background-color: var(--secondary-color-2);
 	color: white;
+}
+
+button.secondary{
+	@apply rounded-full px-2 py-1;
+}
+
+button.text{
+	color: var(--primary-color);
+	text-decoration: underline;
 }
