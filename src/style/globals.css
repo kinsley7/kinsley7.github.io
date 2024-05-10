@@ -9,3 +9,8 @@
     text-wrap: balance;
   }
 }
+
+@font-face {
+	font-family: sans-serif;
+	src: local('MintSans'), url(./MintSansRegular.woff), format('woff');
+}
