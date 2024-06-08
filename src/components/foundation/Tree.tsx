@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect, ReactNode } from 'react'
 import { useSpring, a } from '@react-spring/web'
 import useMeasure from 'react-use-measure'
 import { IComponent } from '../IComponent'
-
+/*
 interface TreeProps extends IComponent{
 	defaultOpen : boolean
 	name : string
@@ -112,3 +112,4 @@ React.memo<
 }
 
 export default Tree
+*/
