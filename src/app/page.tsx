@@ -10,8 +10,6 @@ export default function Home() {
     <main>
       <Button label='Testing'/>
       <Accordion title="test" body="testing open" openIcon={<Image src={ChevronDown} alt='chevron down' className="w-5"/>} closeIcon={<Image src={ChevronUp} alt='Chevron up' className="w-5" />}/>
-      <p> Normal text </p>
-      <p className="font-bold"> Bold Text Test </p>
     </main>
   );
 }
