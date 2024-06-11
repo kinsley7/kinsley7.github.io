@@ -6,7 +6,7 @@ interface ColumnProps extends IComponent{
 }
 
 export const Column = ({classNames = "", children}: ColumnProps) => {
-	return <div className={`flex flex-column ${classNames.trim()}`}>
+	return <div className={`flex flex-col ${classNames.trim()}`}>
 		{children}
 	</div>
 }
