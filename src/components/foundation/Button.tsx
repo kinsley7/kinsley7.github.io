@@ -10,7 +10,7 @@ interface ButtonProps extends IComponent{
 }
 
 
-export const Button = ({classNames, label, type = 'primary', image, imagePosition = 'right', callback}: ButtonProps) => {
+export const Button = ({classNames = '', label, type = 'primary', image, imagePosition = 'right', callback}: ButtonProps) => {
 
 	if (image) { 
 		if (label) {

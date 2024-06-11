@@ -1,6 +1,6 @@
 /* all css files import here */
-@import 'button.css';
-@import 'card.css';
+@import './card.css';
+@import './button.css';
 
  /*all colors here */
 :root {
@@ -9,7 +9,7 @@
 	--primary-accent: #E8407C;
 	--secondary-accent: #E290B0;
 	--background-color: #FFFBF8;
-	--card-color: #D9D9D9;
-	--card-accent: #fafafa;
+	--card-color: #fafafa;
+	--card-accent: #fbddf9;
 }
 

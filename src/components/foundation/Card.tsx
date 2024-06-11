@@ -1,33 +1,14 @@
 import { ReactNode } from "react";
 import { IComponent } from "../IComponent";
 
-
 //cards
 interface CardProps extends IComponent{
-	title ?: ReactNode
-	body : ReactNode
-	type ?: 'window' | 'elevated' | 'normal' 
+	children: ReactNode
+	type ?: 'elevated' | 'normal' | 'rounded'
 }
 
-export const Card =({classNames, title, body, type = 'normal'}: CardProps) => {
-	
-	if (type === 'window'){
-		return <div className={`card window ${classNames}`}>
-			<div>{title}</div>
-			<div>{body}</div>
+export const Card =({classNames = "", children, type = 'normal'}: CardProps) => {
+		return <div className={`card ${type} ${classNames.trim()}`}>
+			<div>{children}</div>
 		</div>
-	}
-	else{
-		if (title){
-			return <div className={`card ${type} ${classNames}`}>
-				<h2>{title}</h2>
-				<div>{body}</div>
-			</div>
-		}
-		else{
-			return <div className={`card ${type} ${classNames}`}>
-			{body}
-		</div>
-		}
-	}
 }
