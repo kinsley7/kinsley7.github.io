@@ -6,6 +6,7 @@ import { Column } from "@/components/foundation/Column";
 import Image from "next/image";
 import { Children, ReactNode, cloneElement, useEffect, useRef, useState } from "react";
 
+
 //title needs to change on scroll when a new section is reached
 interface WindowCardProps extends IComponent{
 	//content : WindowCardSection[]
