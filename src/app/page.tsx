@@ -8,7 +8,7 @@ import ChevronDown from "../../public/chevron-down.svg";
 import { MainWindowCard } from "@/components/compound/MainWindowCard";
 
 import Draggable from 'react-draggable';
-import { DragHandlers } from "@/components/foundation/DragHandlers";
+import { DragHandlers } from "@/utils/DragHandlers";
 
 //homepage
 export default function Home() { 
