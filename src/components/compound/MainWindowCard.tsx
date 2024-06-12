@@ -23,7 +23,7 @@ export const MainWindowCard = ({classNames = ''.trim(), title, children }:MainWi
 	
 	return <div className={classNames}> 
 				<Card type='elevated' classNames="border-[1px] border-black rounded-md">
-					<Card classNames="border-b-[1px] border-black rounded-md">
+					<Card classNames="border-b-[1px] border-black rounded-t-md">
 						<Row classNames="justify-center px-4">
 							<h1 className="mx-auto">{title}</h1>
 							<Image src={hellokitty} alt='' className="justify-self-end w-[30px]"/>
