@@ -8,7 +8,7 @@ import { Children, ReactNode, cloneElement, useEffect, useRef, useState } from "
 
 
 //title needs to change on scroll when a new section is reached
-interface WindowCardProps extends IComponent{
+interface MainWindowCardProps extends IComponent{
 	//content : WindowCardSection[]
 	title : ReactNode;
 	children : ReactNode;
@@ -19,7 +19,7 @@ interface WindowCardProps extends IComponent{
 	children : ReactNode;
 } */
 
-export const WindowCard = ({classNames = ''.trim(), title, children }:WindowCardProps) => {
+export const MainWindowCard = ({classNames = ''.trim(), title, children }:MainWindowCardProps) => {
 	
 	return <div className={classNames}> 
 				<Card type='elevated' classNames="border-[1px] border-black rounded-md">
