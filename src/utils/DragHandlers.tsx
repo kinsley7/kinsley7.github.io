@@ -16,17 +16,17 @@ export const DragHandlers = () => {
       x: x + ui.deltaX,
       y: y + ui.deltaY,
     });
-    console.log('being dragged')
+    //console.log('being dragged')
   };
 
   const onStart = () => {
     setActiveDrags((prev) => prev + 1);
-    console.log('started drag')
+    //console.log('started drag')
   };
 
   const onStop = () => {
     setActiveDrags((prev) => prev - 1);
-    console.log('ended drag')
+    //console.log('ended drag')
   };
 
   const dragHandlers = { onStart, onStop, onDrag: handleDrag };
