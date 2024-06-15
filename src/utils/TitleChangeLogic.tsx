@@ -13,25 +13,21 @@ export const TitleChangeLogic =  ({ sectionIds, scrollContainerRef } : TitleChan
   const handleScroll = useCallback(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
-    let currentSection = 'home';
 
+    let currentSection = '';
     for (const id of sectionIds) {
       const section = document.getElementById(id);
-      if (section && section.getBoundingClientRect().top <= container.scrollTop) {
-        //currentSections.push(id); 
-        //if section is nested inside another section push.id
-        
+      if (section && section.getBoundingClientRect().top <= container.scrollTop) {       
         let breadcrumb = id;
         let parent = section.parentElement;
         
         // Traverse up the DOM tree to build the breadcrumb
-        while (parent) {
+        while (parent && parent.id) {
           // Check if the parent is a section
-          if (parent.id && parent.tagName.toLowerCase() === 'section') {
-            console.log(id);
+          if (parent.tagName.toLowerCase() === 'section') {
             breadcrumb = `${parent.id} > ${breadcrumb}`;
           }
-          parent = section.parentElement;
+          parent = parent.parentElement;
         }
         currentSection = breadcrumb;
       }

@@ -14,7 +14,7 @@ import { DragHandlers } from "@/utils/DragHandlers";
 //homepage
 export default function Home() { 
   const dragHandlers = DragHandlers();
-  const sectionIds = ['testing','home', 'about me', 'flag'];
+  const sectionIds = ['testing','home', 'about me', 'contact','flag'];
   return (
     <main>
           {/* has to be wrapped in div */}
@@ -39,7 +39,7 @@ export default function Home() {
                 <Spacer direction='vertical' size={35}/>
                 <section id='about me'>
                   Reached about section
-                  <h2>About ME</h2>
+                  <h1>About ME</h1>
                   <Spacer direction='vertical' size={30}/>
                   <section id='contact'>
                     <h2>Contact</h2>
