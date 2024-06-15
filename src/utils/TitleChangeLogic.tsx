@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback, RefObject } from 'react';
+import { useEffect, useState, useRef, useCallback, RefObject, Fragment } from 'react';
 import { Link, Events, scrollSpy } from 'react-scroll';
 
 interface TitleChangeLogicProps {
@@ -52,6 +52,17 @@ export const TitleChangeLogic =  ({ sectionIds, scrollContainerRef } : TitleChan
     };
   }, [handleScroll, scrollContainerRef]);
 
-  
-  return <>{activeSection}</>;
+  const sections = activeSection.split('>');
+  return (
+    <>
+      {sections.map((section, index) => (
+        <Fragment key={index}> 
+          <a href={`#${section.trim()}`}>
+            {section.trim()}
+          </a>
+          {index < sections.length - 1 && ' > '}
+          </Fragment>
+      ))}
+    </>
+  )
 };
