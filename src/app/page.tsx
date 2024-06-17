@@ -10,6 +10,27 @@ import { Spacer } from "@/components/foundation/Spacer";
 
 import Draggable from 'react-draggable';
 import { DragHandlers } from "@/utils/DragHandlers";
+import { Tree, TreeProps } from "@/components/foundation/Tree";
+
+const treeData: TreeProps = {
+  label: 'Root',
+  children: [
+    {
+      label: 'Child 1',
+      children: [
+        {
+          label: 'Grandchild 1',
+        },
+        {
+          label: 'Grandchild 2',
+        },
+      ],
+    },
+    {
+      label: 'Child 2',
+    },
+  ],
+};
 
 //homepage
 export default function Home() { 
@@ -19,8 +40,8 @@ export default function Home() {
     <main>
           {/* has to be wrapped in div */}
           <Draggable handle="div" {...dragHandlers}>
-            <div>
-              this will be the navigation card where the tree would go
+            <div className="absolute">
+            <Tree sectionIds={sectionIds} {...treeData} />
             </div>
           </Draggable>
 

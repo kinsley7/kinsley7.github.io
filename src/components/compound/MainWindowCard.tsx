@@ -29,7 +29,7 @@ export const MainWindowCard = ({classNames = ''.trim(), children, sectionIds }:M
 					<Card classNames="border-b-[1px] border-black rounded-t-md">
 						<Row classNames="justify-center px-4">
 							<h1 className="mx-auto">{<TitleChangeLogic sectionIds={sectionIds} scrollContainerRef={scrollContainerRef}/>}</h1>
-							<Image src={hellokitty} alt='' className="justify-self-end w-[30px]"/>
+							<Image src={hellokitty} alt='' className="justify-self-end w-[30px] hover:scale-50"/>
 						</Row>
 					</Card>
 					<Column ref={scrollContainerRef} classNames="p-4 overflow-y-auto h-[85vh]">
