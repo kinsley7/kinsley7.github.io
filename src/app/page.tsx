@@ -7,44 +7,14 @@ import ChevronUp from "../../public/chevron-up.svg";
 import ChevronDown from "../../public/chevron-down.svg";
 import { MainWindowCard } from "@/components/compound/MainWindowCard";
 import { Spacer } from "@/components/foundation/Spacer";
-
-import Draggable from 'react-draggable';
-import { DragHandlers } from "@/utils/DragHandlers";
-import { Tree, TreeProps } from "@/components/foundation/Tree";
-
-const treeData: TreeProps = {
-  label: 'Root',
-  children: [
-    {
-      label: 'Child 1',
-      children: [
-        {
-          label: 'Grandchild 1',
-        },
-        {
-          label: 'Grandchild 2',
-        },
-      ],
-    },
-    {
-      label: 'Child 2',
-    },
-  ],
-};
+import { NavigationCard } from "@/components/compound/NavigationCard";
 
 //homepage
 export default function Home() { 
-  const dragHandlers = DragHandlers();
   const sectionIds = ['testing','home', 'about me', 'contact','flag'];
   return (
     <main>
-          {/* has to be wrapped in div */}
-          <Draggable handle="div" {...dragHandlers}>
-            <div className="absolute">
-            <Tree sectionIds={sectionIds} {...treeData} />
-            </div>
-          </Draggable>
-
+          <NavigationCard/>
           <MainWindowCard classNames="m-2 !justify-center !items-center w-[75vw]" sectionIds={sectionIds}>
             
             <section id='testing' className="mb-10">

@@ -1,6 +1,7 @@
 /* all css files import here */
 @import './card.css';
 @import './button.css';
+@import './tree.css';
 
  /*all colors here */
 :root {
