@@ -1,5 +1,5 @@
 'use client';
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/foundation/Button";
 import { Accordion } from "@/components/foundation/Accordion";
@@ -12,11 +12,12 @@ import { NavigationCard } from "@/components/compound/NavigationCard";
 //homepage
 export default function Home() { 
   const sectionIds = ['testing','home', 'about me', 'contact','flag'];
-  return (
-    <main>
+  const scrollContainerRef = useRef(null);
+    return (
+    <main className="max-w-[100%] overflow-hidden">
           <NavigationCard/>
-          <MainWindowCard classNames="m-2 !justify-center !items-center w-[75vw]" sectionIds={sectionIds}>
-            
+
+          <MainWindowCard scrollContainerRef = {scrollContainerRef} classNames="my-2 mx-auto w-[75vw]" sectionIds={sectionIds}>
             <section id='testing' className="mb-10">
               <Button label='Testing'/>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -26,7 +27,7 @@ export default function Home() {
             <section id='home' className="mb-700">
                 Reached homepage section
                 <br/>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, <span className="font-bold">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 <Button label='Home'/>
                 <Spacer direction='vertical' size={35}/>
                 <section id='about me'>

@@ -18,3 +18,7 @@
 .card.rounded{
 	border-radius: 27px;
 }
+
+.card.accent{
+	background-color: var(--card-accent);
+}
