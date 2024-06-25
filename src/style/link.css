@@ -1,0 +1,14 @@
+.link{
+	color: var(--secondary-color);
+}
+
+.link::after {
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-image: url('../../public/external-link.svg');
+	background-size: cover;
+	color: var(--secondary-color);
+  }
+  
