@@ -7,7 +7,6 @@ import { Card } from "../foundation/Card";
 import { Row } from "../foundation/Row";
 import Image from "next/image";
 
-
 import Navigation from "../../../public/navigation.svg"
 import Folder from "../../../public/folder.svg"
 import Email from "../../../public/email.svg"
@@ -50,7 +49,7 @@ export const NavigationCard = ({ }:NavigationCardProps) => {
 	
 	return <>	
 	<Draggable handle="div" {...dragHandlers}>
-	  <div className="cursor-move">
+	  <div className="cursor-move" id='navigation'>
 		<Card type="elevated" classNames="nav absolute border-[1px] border-black rounded-md">
 			<Card classNames="border-b-[1px] border-black rounded-t-md ">
 			<Row classNames="p-1 justify-center rounded-t-md bg-[var(--card-accent)]">

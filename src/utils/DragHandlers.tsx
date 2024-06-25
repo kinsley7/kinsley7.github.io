@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { DraggableData, DraggableEvent } from 'react-draggable';
 
 interface Position {
@@ -9,6 +9,8 @@ interface Position {
 export const DragHandlers = () => { 
   const [activeDrags, setActiveDrags] = useState(0);
   const [deltaPosition, setDeltaPosition] = useState<Position>({ x: 0, y: 0 });
+  const bounds = {top: 0, left: 0, right: window.innerWidth, bottom: window.innerHeight};
+
 
   const handleDrag = (e: DraggableEvent, ui: DraggableData) => {
     const { x, y } = deltaPosition;
@@ -29,7 +31,7 @@ export const DragHandlers = () => {
     //console.log('ended drag')
   };
 
-  const dragHandlers = { onStart, onStop, onDrag: handleDrag };
+  const dragHandlers = { onStart, onStop, onDrag: handleDrag, bounds };
 
   return dragHandlers;
 

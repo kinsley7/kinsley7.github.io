@@ -4,7 +4,7 @@ import { Row } from "@/components/foundation/Row";
 import hellokitty from "../../../public/hello-kitty.svg"
 import { Column } from "@/components/foundation/Column";
 import Image from "next/image";
-import {ReactNode, RefObject, useRef} from "react";
+import {ReactNode, RefObject} from "react";
 import { TitleChangeLogic } from "@/utils/TitleChangeLogic";
 
 //title needs to change on scroll when a new section is reached

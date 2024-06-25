@@ -24,8 +24,8 @@ export const Tree = ({ classNames, label, children, icon, link = false, activeSe
   };
 
   const hasChildren = children && children.length > 0
-  const minusIcon = <Image className='w-[20px] cursor-pointer' src={minusBox} alt='close tree node'/>
-  const plusIcon = <Image className='w-[20px] cursor-pointer' src={plusBox} alt='open tree node'/>
+  const minusIcon = <Image className='w-[20px] h-auto cursor-pointer' src={minusBox} alt='close tree node'/>
+  const plusIcon = <Image className='w-[20px] h-auto cursor-pointer' src={plusBox} alt='open tree node'/>
 
   const toggleIcon = isOpen ? minusIcon : plusIcon
 

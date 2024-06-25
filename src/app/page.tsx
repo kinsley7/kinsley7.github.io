@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useState } from "react";
+import { useRef} from "react";
 import Image from "next/image";
 import { Button } from "@/components/foundation/Button";
 import { Accordion } from "@/components/foundation/Accordion";
@@ -11,10 +11,10 @@ import { NavigationCard } from "@/components/compound/NavigationCard";
 
 //homepage
 export default function Home() { 
-  const sectionIds = ['testing','home', 'about me', 'contact','flag'];
+  const sectionIds = ['home', 'about me', 'contact','flag'];
   const scrollContainerRef = useRef(null);
     return (
-    <main className="max-w-[100%] overflow-hidden">
+    <main id="home">
           <NavigationCard/>
 
           <MainWindowCard scrollContainerRef = {scrollContainerRef} classNames="my-2 mx-auto w-[75vw]" sectionIds={sectionIds}>
@@ -49,6 +49,7 @@ export default function Home() {
               <Button label='flag'/>
             </section>
           </MainWindowCard>
+
     </main>
   );
 }
