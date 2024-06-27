@@ -2,6 +2,11 @@
 	color: var(--secondary-color);
 }
 
+.link:hover{
+	color: var(--secondary-accent);
+}
+
+/*
 .link::after {
 	content: "";
 	display: inline-block;
@@ -9,6 +14,5 @@
 	height: 20px;
 	background-image: url('../../public/external-link.svg');
 	background-size: cover;
-	color: var(--secondary-color);
   }
-  
+  */

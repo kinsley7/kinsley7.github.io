@@ -20,7 +20,10 @@ interface LinkProps extends IComponent {
 export const Link = ({type, url, children} : LinkProps) => {
 	if(type = 'external'){
 		return(
-				<span><a target="_blank" href={url} className="link">{children}</a></span>
+				<span className="link inline-block flex-row">
+					<a target="_blank" href={url}>{children}</a>
+					<Image className='w-[20px]' src={externalLink} alt='external image'/>
+				</span>
 		)
 	}
 	else{
