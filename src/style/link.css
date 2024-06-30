@@ -6,13 +6,10 @@
 	color: var(--secondary-accent);
 }
 
-/*
+
 .link::after {
-	content: "";
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	background-image: url('../../public/external-link.svg');
-	background-size: cover;
-  }
-  */
+	content: "↗";
+	font-weight: bold;
+	color: currentColor;
+	padding-right: 3px;
+}
