@@ -35,7 +35,7 @@ export default function Home() {
                     </CardWithTab>
                 </Row>
                 <Row>
-                  <ReactPlayer url='../../public/prototyping.mp4' playing loop/>
+                  <ReactPlayer url='/prototyping.mp4' playing loop muted/>
                   <CardWithTab classNames='flex' title='web development'>
                     <Row classNames="justify-center">
                       <Image className='w-[96px] rounded-full' src={Icons.React} alt="React's Icon"/>
