@@ -22,7 +22,7 @@ export const CardWithTab = ({classNames = ''.trim(), title, children, type = 'no
 							<h3>{title}</h3>
 						</Row>
 					</Card>
-					<Column>
+					<Column classNames="p-4">
 						{children}
 					</Column>
 				</Card>

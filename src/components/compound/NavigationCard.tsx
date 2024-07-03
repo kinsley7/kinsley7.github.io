@@ -24,11 +24,15 @@ const treeData: TreeProps = {
 		link: true,
 		icon: <Image className="w-[20px] mr-1" src={Icons.Folder} alt=""/>,
 		children: [
-		  {
-			label: 'contact',
-			link: true,
-			icon: <Image className="w-[20px] mr-1" src={Icons.Email} alt=""/>,
-		  },
+			{
+				label: 'resume',
+				link: true,
+			},
+		    {
+				label: 'contact',
+				link: true,
+				icon: <Image className="w-[20px] mr-1" src={Icons.Email} alt=""/>,
+		    },
 		],
 		},
 		{
@@ -37,8 +41,20 @@ const treeData: TreeProps = {
 		icon: <Image className="w-[20px] mr-1" src={Icons.Folder} alt=""/>,
 		children: [
 			{
-			label: 'first rotation',
-			link: true,
+				label: 'reflection',
+				link: true,
+			},
+			{
+				label: 'first rotation',
+				link: true,
+			},
+			{
+				label: 'second rotation',
+				link: true,
+			},
+			{
+				label: 'third rotation',
+				link: true,
 			},
 		],
 		},
