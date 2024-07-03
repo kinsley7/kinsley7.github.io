@@ -10,6 +10,8 @@ import { Column } from "@/components/foundation/Column";
 import { Icons } from "@/components/foundation/Icons";
 import { Card } from "@/components/foundation/Card";
 import ReactPlayer from "react-player";
+import { CaptionedImage } from "@/components/compound/CaptionedImage";
+import { ChildProcess } from "child_process";
 
 //homepage
 export default function Home() { 
@@ -40,10 +42,10 @@ export default function Home() {
               <section id='first rotation'>
               <h2>First Rotation</h2>
               <Column classNames="grid grid-cols-2 grid-rows-2 gap-2">
-                    <CardWithTab classNames='flex' title='api development'>
-                      <Row classNames="justify-center">
-                        <Image className='w-[96px] rounded-full' src={Icons.Postman} alt="Postman's Icon"/>
-                        <Image className='w-[96px] rounded-full' src={Icons.JavaScript} alt="Javascript's Icon"/>
+                    <CardWithTab classNames='flex' title='API Testing'>
+                      <Row classNames="justify-center gap-4">
+                        <CaptionedImage image={<Image className='w-[96px] rounded-full' src={Icons.Postman} alt="Postman"/>} caption='Postman'/>
+                        <CaptionedImage image={<Image className='w-[96px] rounded-full' src={Icons.JavaScript} alt="Javascript"/>} caption='Javascript'/>
                       </Row>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </CardWithTab>
@@ -51,10 +53,10 @@ export default function Home() {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </CardWithTab>
                   <ReactPlayer url='/prototyping.mp4' playing loop muted/>
-                  <CardWithTab classNames='flex' title='web development'>
-                    <Row classNames="justify-center">
-                      <Image className='w-[96px] rounded-full' src={Icons.React} alt="React's Icon"/>
-                      <Image className='w-[96px] rounded-full' src={Icons.TypeScript} alt="Typescript's Icon"/>
+                  <CardWithTab classNames='flex' title='Web Development'>
+                    <Row classNames="justify-center gap-4">
+                      <CaptionedImage image={<Image className='w-[96px] rounded-full' src={Icons.React} alt="React"/>} caption='React'/>
+                      <CaptionedImage image={<Image className='w-[96px] rounded-full' src={Icons.TypeScript} alt="Typescript"/>} caption='Typescript'/>
                     </Row>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                   </CardWithTab>
