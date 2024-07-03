@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { IComponent } from "../IComponent";
 
 //cards
-interface CardProps extends IComponent{
+export interface CardProps extends IComponent{
 	children: ReactNode
 	type ?: 'elevated' | 'normal' | 'rounded'
 }

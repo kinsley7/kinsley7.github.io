@@ -24,7 +24,7 @@ export const MainWindowCard = ({classNames = ''.trim(), children, sectionIds, sc
 				<Card type='elevated' classNames="border-[1px] border-black rounded-md">
 					<Card classNames="border-b-[1px] border-black rounded-t-md">
 						<Row classNames="bg-[var(--card-accent)] justify-center rounded-t-md p-1">
-							<h1 className="mx-auto nav font-bold">{<TitleChangeLogic sectionIds={sectionIds} scrollContainerRef={scrollContainerRef}/>}</h1>
+							<a className="mx-auto nav font-bold">{<TitleChangeLogic sectionIds={sectionIds} scrollContainerRef={scrollContainerRef}/>}</a>
 							<Image src={hellokitty} alt='' className="justify-self-end w-[30px] hover:scale-50"/>
 						</Row>
 					</Card>

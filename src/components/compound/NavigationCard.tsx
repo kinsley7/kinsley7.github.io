@@ -7,36 +7,41 @@ import { Card } from "../foundation/Card";
 import { Row } from "../foundation/Row";
 import Image from "next/image";
 
-import Navigation from "../../../public/navigation.svg"
-import Folder from "../../../public/folder.svg"
-import Email from "../../../public/email.svg"
+import { Icons } from "../foundation/Icons";
 
 interface NavigationCardProps extends IComponent {
 }
 
-//need to put sectionIds into here:
+
 
 const treeData: TreeProps = {
 	label: 'home',
 	link: true,
-	icon: <Image className="w-[20px] mr-1" src={Folder} alt=""/>,
+	icon: <Image className="w-[20px] mr-1" src={Icons.Folder} alt=""/>,
 	children: [
 	  {
 		label: 'about me',
 		link: true,
-		icon: <Image className="w-[20px] mr-1" src={Folder} alt=""/>,
+		icon: <Image className="w-[20px] mr-1" src={Icons.Folder} alt=""/>,
 		children: [
 		  {
 			label: 'contact',
 			link: true,
-			icon: <Image className="w-[20px] mr-1" src={Email} alt=""/>,
+			icon: <Image className="w-[20px] mr-1" src={Icons.Email} alt=""/>,
 		  },
 		],
-	  },
-	  {
-		label: 'flag',
+		},
+		{
+		label : 'internship',
 		link: true,
-	  },
+		icon: <Image className="w-[20px] mr-1" src={Icons.Folder} alt=""/>,
+		children: [
+			{
+			label: 'first rotation',
+			link: true,
+			},
+		],
+		},
 	],
   }
 
@@ -53,8 +58,8 @@ export const NavigationCard = ({ }:NavigationCardProps) => {
 		<Card type="elevated" classNames="nav absolute border-[1px] border-black rounded-md">
 			<Card classNames="border-b-[1px] border-black rounded-t-md ">
 			<Row classNames="p-1 justify-center rounded-t-md bg-[var(--card-accent)]">
-					<Image className='!w-[25px] pr-1' src={Navigation} alt=''/>
-					<h2 className="font-bold">Navigation</h2>
+					<Image className='!w-[25px] pr-1' src={Icons.Navigation} alt=''/>
+					<p className="font-bold">Navigation</p>
 			</Row>
 			</Card>
 	  			<Tree classNames="m-2 mx-4" {...treeData}/>

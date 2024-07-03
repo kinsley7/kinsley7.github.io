@@ -40,3 +40,13 @@ html, body {
   overflow: hidden;
   position: relative;
 }
+
+h1{
+  font-size:xx-large;
+  font-weight: bolder;
+}
+
+h2{
+  font-size: x-large;
+  font-weight: bold;
+}
