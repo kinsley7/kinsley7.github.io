@@ -9,6 +9,7 @@ import { Row } from "@/components/foundation/Row";
 import { Column } from "@/components/foundation/Column";
 import { Icons } from "@/components/foundation/Icons";
 
+import ReactPlayer from "react-player";
 
 //homepage
 export default function Home() { 
@@ -32,9 +33,9 @@ export default function Home() {
                       </Row>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </CardWithTab>
-                    <video src='../../public/prototyping.mp4'/>
                 </Row>
                 <Row>
+                  <ReactPlayer url='../../public/prototyping.mp4' playing loop/>
                   <CardWithTab classNames='flex' title='web development'>
                     <Row classNames="justify-center">
                       <Image className='w-[96px] rounded-full' src={Icons.React} alt="React's Icon"/>
