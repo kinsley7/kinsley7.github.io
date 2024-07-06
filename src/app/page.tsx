@@ -12,6 +12,7 @@ import { Card } from "@/components/foundation/Card";
 import ReactPlayer from "react-player";
 import { CaptionedImage } from "@/components/compound/CaptionedImage";
 import { ChildProcess } from "child_process";
+import { Carousel } from "@/components/compound/Carousel";
 
 //homepage
 export default function Home() { 
@@ -52,7 +53,18 @@ export default function Home() {
                     <CardWithTab title='hi'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </CardWithTab>
-                  <ReactPlayer url='/prototyping.mp4' playing loop muted/>
+                    <Carousel classNames='p-2' direction="vertical" items={[
+                      {
+                        content : <ReactPlayer url='/prototyping.mp4' playing loop muted/>,
+                        title : 'Prototyping',
+                        caption : 'Taking something and making it real.'
+                      },
+                      {
+                        content : 'HI',
+                        title: 'Test',
+                        caption : 'Testing'
+                      }
+                    ]}/>
                   <CardWithTab classNames='flex' title='Web Development'>
                     <Row classNames="justify-center gap-4">
                       <CaptionedImage image={<Image className='w-[96px] rounded-full' src={Icons.React} alt="React"/>} caption='React'/>
