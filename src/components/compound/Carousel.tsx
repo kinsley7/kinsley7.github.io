@@ -35,27 +35,28 @@ export const Carousel = ({classNames, items, direction = 'vertical'} : CarouselP
 	
 	if (direction == 'vertical'){
 		{ /*  card for the title and caption & card for the content*/}
+		{/* if screen is med. size then the caption and title go under the content and the circles are displayed on the side*/}
 		return <Row classNames={classNames?.trim()}>
-        <Column classNames='relative'>
+        <Column classNames='my-auto'>
           {items.map((item, index) => 
             <Card key={index} onClick={() =>
 				{ 
 				setActiveIndex(index); 
 				window.clearInterval(intervalId);
 				}} 
-				classNames={`transition-all ease-in-out hover:-translate-y-1 hover:scale-110 rounded-[13px] p-2 m-5 shadow-lg ${index === activeIndex ? 'scale-110' : '!bg-gray-50'}`}>
+				classNames={`rounded-[13px] p-2 my-2 shadow-lg max-w-sm transition-all scale-90 ease-in-out hover:-translate-y-1 hover:scale-100 ${index === activeIndex ? '': 'w-[150px]'}`}>
             	<Column>
 					<Row classNames='items-center'>
 						<div className={`w-4 h-4 rounded-full ${index === activeIndex ? 'bg-[var(--primary-accent)]' : 'bg-[var(--secondary-accent)]'}`}></div>
-						<h3 className={`p-2 transition-all ease-in-out ${index === activeIndex ? 'text-lg': 'text-base'}`}>{item.title}</h3>
+						<h3 className={`p-2 transition-all ease-in-out ${index === activeIndex ? 'text-base': 'text-sm'}`}>{item.title}</h3>
 				  </Row>
                 {/* if item is active show caption else only title*/}
-                <p className={`text-center transition-opacity ease-in-out italic ${index === activeIndex ? 'opacity-100' : 'opacity-0'}`}>{index === activeIndex && item.caption}</p>
+                <p className={`text-center text-sm transition-opacity ease-in-out italic ${index === activeIndex ? 'opacity-100' : 'opacity-0'}`}>{index === activeIndex && item.caption}</p>
               	</Column>
             </Card>
           )}
         </Column>
-        <Card classNames={`transition-all ease-in-out opacity-100`}>
+        <Card classNames={`transition-all ease-in-out opacity-100 max-width-md m-auto`}>
           {items[activeIndex].content}
         </Card>
       </Row>

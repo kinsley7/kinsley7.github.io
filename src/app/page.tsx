@@ -13,6 +13,8 @@ import ReactPlayer from "react-player";
 import { CaptionedImage } from "@/components/compound/CaptionedImage";
 import { ChildProcess } from "child_process";
 import { Carousel } from "@/components/compound/Carousel";
+import { Button } from "@/components/foundation/Button";
+import { Accordion } from "@/components/foundation/Accordion";
 
 //homepage
 export default function Home() { 
@@ -50,19 +52,24 @@ export default function Home() {
                       </Row>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </CardWithTab>
-                    <CardWithTab title='hi'>
+                    <CardWithTab title='About API Test'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </CardWithTab>
                     <Carousel classNames='p-2' direction="vertical" items={[
                       {
-                        content : <ReactPlayer url='/prototyping.mp4' playing loop muted/>,
+                        content : <ReactPlayer className='max-w-md' url='/prototyping.mp4' playing loop muted/>,
                         title : 'Prototyping',
                         caption : 'Taking something and making it real.'
                       },
                       {
-                        content : 'HI',
-                        title: 'Test',
-                        caption : 'Testing'
+                        content : <Button label="test"/>,
+                        title: 'Pill box',
+                        caption : 'Multiple buttons'
+                      },
+                      {
+                        content :  <Accordion title="test" body="testing open" openIcon={<Image src={Icons.ChevronDown} alt='chevron down' className="w-5"/>} closeIcon={<Image src={Icons.ChevronUp} alt='Chevron up' className="w-5" />}/>,
+                        title : 'Accordion',
+                        caption : 'Allows users to view information'
                       }
                     ]}/>
                   <CardWithTab classNames='flex' title='Web Development'>

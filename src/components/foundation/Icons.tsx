@@ -1,7 +1,8 @@
 import NavigationIcon from "../../../public/navigation.svg"
 import FolderIcon from "../../../public/folder.svg"
 import EmailIcon from "../../../public/email.svg"
-
+import Up from "../../../public/chevron-up.svg"
+import Down from "../../../public/chevron-down.svg"
 
 import PostmanIcon from "../../../public/Postman-icon.svg";
 import JavaScriptIcon from "../../../public/JavaScript-icon.svg"
@@ -15,5 +16,7 @@ export const Icons = {
  	Postman : PostmanIcon,
 	JavaScript : JavaScriptIcon,
 	React : ReactIcon,
-	TypeScript : TypeScriptIcon
+	TypeScript : TypeScriptIcon,
+	ChevronUp : Up,
+	ChevronDown : Down
 }
