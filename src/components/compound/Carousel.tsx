@@ -44,7 +44,7 @@ export const Carousel = ({classNames, items, direction = 'vertical'} : CarouselP
 				setActiveIndex(index); 
 				window.clearInterval(intervalId);
 				}} 
-				classNames={`rounded-[13px] p-2 my-2 shadow-lg max-w-sm transition-all scale-90 ease-in-out hover:-translate-y-1 hover:scale-100 ${index === activeIndex ? '': 'w-[150px]'}`}>
+				classNames={`bg-[var(--dark-card-color)]/2 rounded-[13px] p-2 my-2 shadow-lg max-w-sm transition-all scale-90 ease-in-out hover:-translate-y-1 hover:scale-100 ${index === activeIndex ? '': 'w-[150px]'}`}>
             	<Column>
 					<Row classNames='items-center'>
 						<div className={`w-4 h-4 rounded-full ${index === activeIndex ? 'bg-[var(--primary-accent)]' : 'bg-[var(--secondary-accent)]'}`}></div>

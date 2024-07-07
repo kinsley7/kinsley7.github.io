@@ -73,9 +73,9 @@ export const NavigationCard = ({ }:NavigationCardProps) => {
 	  <div className="cursor-move" id='navigation'>
 		<Card type="elevated" classNames="nav absolute border-[1px] border-black rounded-md">
 			<Card classNames="border-b-[1px] border-black rounded-t-md ">
-			<Row classNames="p-1 justify-center rounded-t-md bg-[var(--card-accent)]">
-					<Image className='!w-[25px] pr-1' src={Icons.Navigation} alt=''/>
-					<p className="font-bold">Navigation</p>
+			<Row classNames="p-1 justify-center rounded-t-md bg-gradient-to-b from-[#ffd9f9] to-[#cf5f9b]">
+					<Image className='!w-[25px] stroke-white pr-1' src={Icons.Navigation} alt=''/>
+					<p className="!text-black font-bold">Navigation</p>
 			</Row>
 			</Card>
 	  			<Tree classNames="m-2 mx-4" {...treeData}/>

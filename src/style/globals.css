@@ -39,20 +39,25 @@ html, body {
   height: 100vh;
   overflow: hidden;
   position: relative;
+  background-color: var(--dark-background-color);
+  color: white;
 }
 
 h1{
   font-size:xx-large;
   font-weight: bolder;
   text-align: center;
+  color: var(--text-color);
 }
 
 h2{
   font-size: x-large;
   font-weight: bold;
   text-align: center;
+  color: var(--text-color);
 }
 
 h3{
   font-size: large;
+  color: var(--text-color);
 }
