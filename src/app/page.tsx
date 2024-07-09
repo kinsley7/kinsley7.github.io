@@ -52,7 +52,7 @@ export default function Home() {
                       </Row>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </CardWithTab>
-                    <CardWithTab title='About API Test'>
+                    <CardWithTab title='About API Testing'>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </CardWithTab>
                     <Carousel classNames='p-2' direction="vertical" items={[
@@ -76,6 +76,7 @@ export default function Home() {
                     <Row classNames="justify-center gap-4">
                       <CaptionedImage image={<Image className='w-[96px] rounded-full' src={Icons.React} alt="React"/>} caption='React'/>
                       <CaptionedImage image={<Image className='w-[96px] rounded-full' src={Icons.TypeScript} alt="Typescript"/>} caption='Typescript'/>
+                      <CaptionedImage image={<Image className='w-[96px] rounded-full' src={Icons.Git} alt="Typescript"/>} caption='Git'/>
                     </Row>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                   </CardWithTab>

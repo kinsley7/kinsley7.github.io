@@ -8,6 +8,7 @@ import PostmanIcon from "../../../public/Postman-icon.svg";
 import JavaScriptIcon from "../../../public/JavaScript-icon.svg"
 import ReactIcon from "../../../public/React-icon.svg"
 import TypeScriptIcon from "../../../public/TypeScript-icon.svg"
+import GitIcon from "../../../public/git-icon-logo-svgrepo-com.svg"
 
 export const Icons = {
 	Navigation : NavigationIcon,
@@ -17,6 +18,7 @@ export const Icons = {
 	JavaScript : JavaScriptIcon,
 	React : ReactIcon,
 	TypeScript : TypeScriptIcon,
+	Git : GitIcon,
 	ChevronUp : Up,
 	ChevronDown : Down
 }
