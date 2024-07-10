@@ -19,13 +19,14 @@ import { PillBox } from "@/components/compound/PillBox";
 import { Label } from "@headlessui/react";
 import { AccordionInfo } from "@/components/compound/AccordionInfo";
 import { Link } from "@/components/foundation/Link";
+import { PDFViewer } from "@/components/compound/PDFViewer";
 
-import { Document } from "react-pdf";
 
 //homepage
 export default function Home() { 
   const sectionIds = ['about me', 'resume', 'contact', 'internship', 'first rotation', 'second rotation', 'third rotation'];
   const scrollContainerRef = useRef(null);
+
     return (
     <main>
           <NavigationCard/>
@@ -42,7 +43,8 @@ export default function Home() {
               <section id='resume'>
                 <Column>
                 <h2>Resume</h2>
-                <Document file={"https://github.com/kinsley7/internship-portfolio/blob/dev/public/Kinsley-Crowdis-Resume.pdf"}/>
+                <iframe src="https://www.dropbox.com/scl/fi/t6zqkfe6wsb4pqbrw88sa/Kinsley-Crowdis-Resume.pdf?rlkey=gtldnnwp9wobasyig52eqr177&st=u0wnt4mf&dl=0" width='100%'/>
+                <PDFViewer url={"https://www.dropbox.com/scl/fi/t6zqkfe6wsb4pqbrw88sa/Kinsley-Crowdis-Resume.pdf?rlkey=gtldnnwp9wobasyig52eqr177&st=u0wnt4mf&dl=0"}/>
                 </Column>
               </section>
               <section id='contact'>
@@ -131,7 +133,7 @@ export default function Home() {
                   </CardWithTab>
               </Column>
                 <Column>
-                  <></>
+                  <PDFViewer url="https://www.dropbox.com/scl/fi/rzpayilt3kier3gvuy87p/Crowdis-Final-Internship-Paper-Spring.pdf?rlkey=tu10ha0arxnvb6vd6usfdk3yz&st=o0tk51b8&dl=0"/>
                 </Column>
               </section>
               <section id="second rotation">
