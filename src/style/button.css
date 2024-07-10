@@ -7,23 +7,27 @@ button{
 button.primary {
 	@apply rounded-full px-2 py-1;
 	max-width: fit-content;
-	background-color: var(--primary-color);
+	background-color: var(--primary-accent);
 	color: white;
 }
 
 button.primary:hover{
-	background-color: var(--primary-accent);
+	background-color: var(--secondary-color);
 }
 
 button.primary:focus{
-	background-color: var(--secondary-color-2);
+	background-color: var(--secondary-color);
 }
 
 button.secondary{
 	@apply rounded-full px-2 py-1;
+	outline: 5px;
+	outline-color: var(--primary-accent);
+
 }
 
 button.text{
 	color: var(--primary-color);
 	text-decoration: underline;
 }
+

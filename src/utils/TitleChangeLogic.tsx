@@ -8,7 +8,7 @@ interface TitleChangeLogicProps {
 
 export const TitleChangeLogic =  ({ sectionIds, scrollContainerRef } : TitleChangeLogicProps) => {
  
-  const [activeSection, setActiveSection] = useState<string>('home');
+  const [activeSection, setActiveSection] = useState<string>('');
   
   const handleScroll = useCallback(() => {
     const container = scrollContainerRef.current;
