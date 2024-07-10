@@ -16,8 +16,8 @@ interface CardWithTabProps extends IComponent{
 export const CardWithTab = ({classNames = ''.trim(), title, children, type = 'normal' }:CardWithTabProps) => {
 
 	return <div className={classNames}> 
-				<Card type={type} classNames="border-[1px] border-black rounded-md">
-					<Card classNames="border-b-[1px] border-black rounded-t-md">
+				<Card type={type} classNames="border-[1px] border-[var(--card-accent)] rounded-md">
+					<Card classNames="border-b-[1px] border-[var(--card-accent)] rounded-t-md">
 						<Row classNames=" bg-[var(--card-accent)] justify-center rounded-t-md p-1">
 							<h3 className="!text-black">{title}</h3>
 						</Row>

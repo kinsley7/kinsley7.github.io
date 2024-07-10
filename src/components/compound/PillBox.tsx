@@ -16,7 +16,7 @@ export const PillBox = ({title, pills}: PillBoxProps) => {
 		<p>{title}</p>
 		<Row classNames="gap-2 flex-wrap align-center justify-center place-items-center">
 			{pills.map((pill, index) => {
-				return <Button key={index} label={pill.label}/>
+				return <Button type="secondary" key={index} label={pill.label}/>
 			})}
 		</Row>
 	</Card>

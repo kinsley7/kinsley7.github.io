@@ -70,9 +70,9 @@ export const NavigationCard = ({ }:NavigationCardProps) => {
 	
 	return <>	
 	<Draggable handle="div" {...dragHandlers}>
-	  <div className="cursor-move" id='navigation'>
-		<Card type="elevated" classNames="nav absolute border-[1px] border-black rounded-md">
-			<Card classNames="border-b-[1px] border-black rounded-t-md ">
+	  <div className="cursor-move absolute z-50" id='navigation'>
+		<Card type="elevated" classNames="nav border-[1px] border-[#cf5f9b] rounded-md">
+			<Card classNames="border-b-[1px] border-[#cf5f9b] rounded-t-md ">
 			<Row classNames="p-1 justify-center rounded-t-md bg-gradient-to-b from-[#ffd9f9] to-[#cf5f9b]">
 					<Image className='!w-[25px] stroke-white pr-1' src={Icons.Navigation} alt=''/>
 					<p className="!text-black font-bold">Navigation</p>

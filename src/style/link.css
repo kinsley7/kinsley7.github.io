@@ -1,9 +1,10 @@
 .link{
-	color: var(--secondary-color);
+	color: var(--primary-accent);
+	text-decoration: underline;
 }
 
 .link:hover{
-	color: var(--secondary-accent);
+	color: var(--secondary-color);
 }
 
 

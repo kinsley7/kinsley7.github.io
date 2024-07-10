@@ -2,7 +2,7 @@
 import { ReactNode, useState } from 'react';
 import { IComponent } from '../IComponent';
 
-interface AccordionProps extends IComponent{
+export interface AccordionProps extends IComponent{
   title: string;
   body: ReactNode;
   openIcon ?: ReactNode;
@@ -12,8 +12,8 @@ interface AccordionProps extends IComponent{
 export const Accordion = ({ title, body, openIcon, closeIcon, classNames }: AccordionProps) => {
   const [isOpen, setIsOpen] = useState(false);
   
-  return <div className={classNames}>
-      <button onClick={() => setIsOpen(!isOpen)}>
+  return <div className={`${classNames}`}>
+      <button className='pb-2' onClick={() => setIsOpen(!isOpen)}>
         {title} {isOpen == false ? openIcon : closeIcon}
       </button>
       {isOpen && <div>{body}</div>}

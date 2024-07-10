@@ -21,7 +21,7 @@ export const Icons = {
 	React : ReactIcon,
 	TypeScript : TypeScriptIcon,
 	Git : GitIcon,
-	Talwind : TailwindIcon,
+	Tailwind : TailwindIcon,
 	ChevronUp : Up,
 	ChevronDown : Down
 }

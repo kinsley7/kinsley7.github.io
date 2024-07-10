@@ -17,9 +17,14 @@ import { Button } from "@/components/foundation/Button";
 import { Accordion } from "@/components/foundation/Accordion";
 import { PillBox } from "@/components/compound/PillBox";
 import { Label } from "@headlessui/react";
+import { AccordionInfo } from "@/components/compound/AccordionInfo";
+import { Link } from "@/components/foundation/Link";
+
+import { Document } from "react-pdf";
+
 //homepage
 export default function Home() { 
-  const sectionIds = ['about me', 'contact','flag'];
+  const sectionIds = ['about me', 'resume', 'contact', 'internship', 'first rotation', 'second rotation', 'third rotation'];
   const scrollContainerRef = useRef(null);
     return (
     <main>
@@ -27,18 +32,23 @@ export default function Home() {
 
           <MainWindowCard scrollContainerRef = {scrollContainerRef} classNames="my-2 mx-auto w-[75vw]" sectionIds={sectionIds}>
             <section id='about me'>
+              <Card classNames="p-2">
               <h1>About Me</h1>
-              Hi, my name is Kinsley Crowdis and I am a student at East Tennessee State University! This year I began my internship with Blue Cross Blue Shield Tennessee. This website documents everything I did during my time there.
+              Hi, my name is Kinsley Crowdis and I am a student at East Tennessee State University. This year I began my internship with Blue Cross Blue Shield Tennessee. This website documents what I did during my time there.
               <br/>
               mission/vision statement here
               <br/>
               career goals here
               <section id='resume'>
-                resume
+                <Column>
+                <h2>Resume</h2>
+                <Document file={"https://github.com/kinsley7/internship-portfolio/blob/dev/public/Kinsley-Crowdis-Resume.pdf"}/>
+                </Column>
               </section>
               <section id='contact'>
                 Contact Me
               </section>
+              </Card>
             </section>
 
             <section id='internship'>
@@ -52,8 +62,9 @@ export default function Home() {
               <h3>Consumer Portals</h3>
               <h3>Junior Dev</h3>
               <h4>January 22nd - June 7th</h4>
+              
               </Column>
-              <Column classNames="grid grid-cols-2 grid-rows-2 gap-4">
+              <Column classNames="grid grid-cols-2 grid-rows-2 gap-4 py-4">
                     <CardWithTab classNames='flex' title='API Testing' type="elevated">
                       <Row classNames="justify-center gap-4">
                         <CaptionedImage image={<Image className='w-[96px] rounded-full' src={Icons.Postman} alt="Postman"/>} caption='Postman'/>
@@ -61,11 +72,13 @@ export default function Home() {
                       </Row>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </CardWithTab>
-                    <CardWithTab classNames='my-auto' title='About API Testing'>
+                    <Card classNames='my-auto'>
+                      <h3 className="text-center p-2">About API Testing</h3>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </CardWithTab>
+                    </Card>
                     <Card classNames="p-4 self-center">
-                      <Carousel classNames='p-2' direction="vertical" items={[
+                      <h3 className="text-center">Examples of Components Created</h3>
+                      <Carousel classNames='p-2 pt-4' direction="vertical" items={[
                         {
                           content : <PillBox classNames="p-2" pills={[
                             {
@@ -88,7 +101,16 @@ export default function Home() {
                           caption : 'Multiple buttons'
                         },
                         {
-                          content :  <Accordion title="test" body="testing open" openIcon={<Image src={Icons.ChevronDown} alt='chevron down' className="w-5"/>} closeIcon={<Image src={Icons.ChevronUp} alt='Chevron up' className="w-5" />}/>,
+                          content : <AccordionInfo title="Dropdown Information" items={[
+                            {
+                              title: 'Dropdown Accordions..',
+                              body : 'Help the user gain knowledge at a glance!'
+                            },
+                            {
+                              title: 'There can be..',
+                              body : <span>More than one! This component is made using the {<Link type="external" url="https://react.dev/reference/react/useState">useState React Hook</Link>}</span>
+                            }
+                          ]}/>,
                           title : 'Accordion',
                           caption : 'Allows users to view information'
                         }
@@ -98,17 +120,23 @@ export default function Home() {
                     <Row classNames="justify-center gap-4 p-2">
                       <CaptionedImage image={<Image className='w-[90px] rounded-full' src={Icons.React} alt="React"/>} caption='React'/>
                       <CaptionedImage image={<Image className='w-[90px] rounded-full' src={Icons.TypeScript} alt="Typescript"/>} caption='Typescript'/>
-                      <CaptionedImage image={<Image className='w-[90px] rounded-full' src={Icons.Git} alt="Typescript"/>} caption='Git'/>
-                      <CaptionedImage image={<Image className='w-[90px] rounded-full' src={Icons.Talwind} alt="Typescript"/>} caption='Tailwind CSS'/>
+                      <CaptionedImage image={<Image className='w-[90px] rounded-full' src={Icons.Git} alt="Git"/>} caption='Git'/>
+                      <CaptionedImage image={<Image className='w-[90px] rounded-full' src={Icons.Tailwind} alt="Tailwind"/>} caption='Tailwind CSS'/>
                     </Row>
                      During the latter half of this rotation, I had the opportunity to assist in building their new website. This exciting experience allowed me to learn new tools and languages such as React, TypeScript, and Tailwind. I utilized my knowledge from this experience to create everything you see here.
-                     <br/>I constructed components based on a prototype. 
+                     <br/>
+                     <br/>
+                     I constructed components based on a prototype. 
                      I was an active part of the team, collaborating closely with the designers, fellow developers, and product owners to ensure my code aligned with their vision and requirements.
                   </CardWithTab>
               </Column>
+                <Column>
+                  <></>
+                </Column>
               </section>
               <section id="second rotation">
                 <h2>Second Rotation</h2>
+                <h3>Software Quality Assurance</h3>
               </section>
               <section id="third rotation">
                 <h2>Third Rotation</h2>
