@@ -9,7 +9,7 @@ interface Position {
 export const DragHandlers = () => { 
   const [activeDrags, setActiveDrags] = useState(0);
   const [deltaPosition, setDeltaPosition] = useState<Position>({ x: 0, y: 0 });
-  const bounds = {top: 0, left: 0, right: window.innerWidth, bottom: window.innerHeight};
+  const bounds = {top: 0, left: 0};
 
 
   const handleDrag = (e: DraggableEvent, ui: DraggableData) => {
