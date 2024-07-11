@@ -27,8 +27,8 @@ export const Link = ({type, url, children, callback} : LinkProps) => {
 	}
 	if(type == 'internal'){
 		return(
-			<span>
-				<a className="link internal" onClick={callback}>{children}</a>
+			<span className="inline-block">
+				<a className="link internal" href={url} onClick={callback}>{children}</a>
 				</span>
 			)
 	}

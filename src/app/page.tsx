@@ -62,9 +62,9 @@ const togglePopup = (name : string) => {
               <h1>About Me</h1>
               Hi, my name is Kinsley Crowdis and I am a student at East Tennessee State University. This year I began my internship with Blue Cross Blue Shield Tennessee. This website documents what I did during my time there.
               <br/>
-              I want to contribute to the world in a meaningful way
+              I want to contribute to the world positively
               <br/>
-              In my career I want to blank
+              In my career I want to be apart of something
               <br/>
               <Link type="internal" callback={() => togglePopup('resume')}>Click here to view my resume.</Link>
               <section id='contact'>
@@ -89,20 +89,24 @@ const togglePopup = (name : string) => {
               <h4>January 22nd - June 7th</h4>
               
               </Column>
-              <Column classNames="grid grid-cols-2 grid-rows-2 gap-4 py-4">
-                    <CardWithTab classNames='flex' title='API Testing' type="elevated">
-                      <Row classNames="justify-center gap-4">
+              <Column classNames="items-center mt-[12px]">
+                    <CardWithTab classNames='flex w-[50%]' title='API Testing' type="elevated">
+                      <Row classNames="justify-center gap-4 p-2">
                         <CaptionedImage image={<Image className='w-[96px] rounded-full' src={Icons.Postman} alt="Postman"/>} caption='Postman'/>
                         <CaptionedImage image={<Image className='w-[96px] rounded-full' src={Icons.JavaScript} alt="Javascript"/>} caption='Javascript'/>
                       </Row>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      In the first half of this rotation, I wrote tests for endpoints and called on the API endpoints in my own Next.JS app. 
+                      I used Postman and Javascript to write the tests and create the Next.JS app.
+                      <br/>
+                      Other developers later used my code for the Next.JS app for another project.
+                      My experience with testing these would prove helpful in my second rotation, where I am with the quality assurance team.
+                      <br/>
+                      While testing, I made sure that the response matched the expected results. Some endpoints were designed to return specific types of values, and I verified that they did. I also tested response times and handled errors and edge cases.
                     </CardWithTab>
-                    <Card classNames='my-auto'>
-                      <h3 className="text-center p-2">About API Testing</h3>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </Card>
+                  </Column>
+              <Column classNames="grid grid-cols-2 gap-4 py-4 items-center">
                     <Card classNames="p-4 self-center">
-                      <h3 className="text-center">Examples of Components Created</h3>
+                      <h3 className="text-center !font-bold">Examples of Components Created</h3>
                       <Carousel classNames='p-2 pt-4' direction="vertical" items={[
                         {
                           content : <PillBox classNames="p-2" pills={[
@@ -152,10 +156,10 @@ const togglePopup = (name : string) => {
                      <br/>
                      <br/>
                      I constructed components based on a prototype. 
-                     I was an active part of the team, collaborating closely with the designers, fellow developers, and product owners to ensure my code aligned with their vision and requirements.
+                     I actively collaborated with the designers, fellow developers, and product owners to ensure my code aligned with their vision and requirements. I also participated in code peer-reviewing.
                   </CardWithTab>
               </Column>
-                <Column classNames="items-center">
+                <Column classNames=" mt-[12px] mb-[20px] items-center">
                 <h3 className="!bold">Artifact</h3>
                 <Link type="internal" callback={() => togglePopup('first artifact')}>Click here to read about my experience!</Link>
                 </Column>
