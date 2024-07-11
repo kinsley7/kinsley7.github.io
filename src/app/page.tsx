@@ -25,7 +25,7 @@ import { WindowPopUp } from "@/components/compound/WindowPopUp";
 
 //homepage
 export default function Home() { 
-  const sectionIds = ['about me', 'resume', 'contact', 'internship', 'first rotation', 'second rotation', 'third rotation'];
+  const sectionIds = ['about me', 'contact', 'internship', 'first rotation', 'second rotation', 'third rotation'];
   const scrollContainerRef = useRef(null);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -62,9 +62,9 @@ const togglePopup = (name : string) => {
               <h1>About Me</h1>
               Hi, my name is Kinsley Crowdis and I am a student at East Tennessee State University. This year I began my internship with Blue Cross Blue Shield Tennessee. This website documents what I did during my time there.
               <br/>
-              mission/vision statement here
+              I want to contribute to the world in a meaningful way
               <br/>
-              career goals here
+              In my career I want to blank
               <br/>
               <Link type="internal" callback={() => togglePopup('resume')}>Click here to view my resume.</Link>
               <section id='contact'>
