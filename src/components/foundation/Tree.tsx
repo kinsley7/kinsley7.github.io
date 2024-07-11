@@ -9,6 +9,7 @@ export interface TreeProps extends IComponent {
   label: string;
   icon ?: ReactNode; //if x then icon needs to be folder, if y then icon needs to be file etc (logic implemented in nav card)
   link ?: boolean;
+  callback ?: () => void;
   children?: TreeProps[];
   activeSection ?: string;
   expandedSections ?: string[];
@@ -16,7 +17,7 @@ export interface TreeProps extends IComponent {
 }
 
 
-export const Tree = ({ classNames, label, children, icon, link = false, activeSection, expandedSections }:TreeProps) => {
+export const Tree = ({ classNames, label, children, icon, link = false, activeSection, expandedSections, callback }:TreeProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
@@ -34,7 +35,7 @@ export const Tree = ({ classNames, label, children, icon, link = false, activeSe
     <div className={classNames}>
       <div onClick={handleToggle}> {/* this is the node itself*/}
         <Row classNames={hasChildren && toggleIcon ? '' : 'ml-1' }>
-          {hasChildren && toggleIcon } {icon} {link ? <a href={`#${label}`}>{label}</a> : label }
+          {hasChildren && toggleIcon } {icon} {link ? <a onClick={callback} href={`#${label}`}>{label}</a> : label }
         </Row>
       </div>
       {isOpen && children?.map((section, index) => (

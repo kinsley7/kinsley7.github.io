@@ -1,5 +1,5 @@
 'use client';
-import { useRef} from "react";
+import { useRef, useState} from "react";
 import Image from "next/image";
 import { MainWindowCard } from "@/components/compound/MainWindowCard";
 import { Spacer } from "@/components/foundation/Spacer";
@@ -19,7 +19,8 @@ import { PillBox } from "@/components/compound/PillBox";
 import { Label } from "@headlessui/react";
 import { AccordionInfo } from "@/components/compound/AccordionInfo";
 import { Link } from "@/components/foundation/Link";
-import { PDFViewer } from "@/components/compound/PDFViewer";
+import  { PDFViewer }  from "@/components/compound/PDFViewer";
+import { WindowPopUp } from "@/components/compound/WindowPopUp";
 
 
 //homepage
@@ -27,10 +28,34 @@ export default function Home() {
   const sectionIds = ['about me', 'resume', 'contact', 'internship', 'first rotation', 'second rotation', 'third rotation'];
   const scrollContainerRef = useRef(null);
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const [popups, setPopups] = useState<{ [key: string]: boolean }>({});
+
+const togglePopup = (name : string) => {
+  setPopups({
+    ...popups,
+    [name]: !popups[name]
+  });
+}
     return (
     <main>
-          <NavigationCard/>
+          <NavigationCard togglePopupResume={() => togglePopup('resume')}/>
+          <WindowPopUp isOpen={popups['resume']} togglePopup={() => togglePopup('resume')} title="Resume">
+                            <object className="px-2"
+                              data="https://drive.google.com/file/d/1NIuchUPLTfy76YfNXG387MDS2m6p6pNU/preview?pli=1"
+                              width='500'
+                              height="600"/>
+                          </WindowPopUp>
 
+                          <WindowPopUp isOpen={popups['first artifact']} togglePopup={() => togglePopup('first artifact')} title="Rotation 1 Artifact">
+                            <object className="px-2"
+                              data="https://drive.google.com/file/d/1FLrt7WGrXK4VMq-X2F9KDyDQompA1lWP/preview?pli=1"
+                              width='500'
+                              height="600"/>
+                          </WindowPopUp>
+          
+          
           <MainWindowCard scrollContainerRef = {scrollContainerRef} classNames="my-2 mx-auto w-[75vw]" sectionIds={sectionIds}>
             <section id='about me'>
               <Card classNames="p-2">
@@ -40,15 +65,13 @@ export default function Home() {
               mission/vision statement here
               <br/>
               career goals here
-              <section id='resume'>
-                <Column>
-                <h2>Resume</h2>
-                <iframe src="https://www.dropbox.com/scl/fi/t6zqkfe6wsb4pqbrw88sa/Kinsley-Crowdis-Resume.pdf?rlkey=gtldnnwp9wobasyig52eqr177&st=u0wnt4mf&dl=0" width='100%'/>
-                <PDFViewer url={"https://www.dropbox.com/scl/fi/t6zqkfe6wsb4pqbrw88sa/Kinsley-Crowdis-Resume.pdf?rlkey=gtldnnwp9wobasyig52eqr177&st=u0wnt4mf&dl=0"}/>
-                </Column>
-              </section>
+              <br/>
+              <Link type="internal" callback={() => togglePopup('resume')}>Click here to view my resume.</Link>
               <section id='contact'>
-                Contact Me
+              <Column classNames="text-center">
+                <h2>Contact Me!</h2>
+                You can reach out to me at: <span className="font-bold">crowdis@etsu.edu</span>
+              </Column>
               </section>
               </Card>
             </section>
@@ -84,7 +107,7 @@ export default function Home() {
                         {
                           content : <PillBox classNames="p-2" pills={[
                             {
-                            label : 'buttons to'
+                              label : 'buttons to'
                             },
                             {
                               label : 'navigate'
@@ -132,8 +155,9 @@ export default function Home() {
                      I was an active part of the team, collaborating closely with the designers, fellow developers, and product owners to ensure my code aligned with their vision and requirements.
                   </CardWithTab>
               </Column>
-                <Column>
-                  <PDFViewer url="https://www.dropbox.com/scl/fi/rzpayilt3kier3gvuy87p/Crowdis-Final-Internship-Paper-Spring.pdf?rlkey=tu10ha0arxnvb6vd6usfdk3yz&st=o0tk51b8&dl=0"/>
+                <Column classNames="items-center">
+                <h3 className="!bold">Artifact</h3>
+                <Link type="internal" callback={() => togglePopup('first artifact')}>Click here to read about my experience!</Link>
                 </Column>
               </section>
               <section id="second rotation">

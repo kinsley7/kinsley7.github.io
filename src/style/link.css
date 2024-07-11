@@ -1,6 +1,7 @@
 .link{
 	color: var(--primary-accent);
 	text-decoration: underline;
+	cursor: pointer;
 }
 
 .link:hover{
@@ -8,8 +9,16 @@
 }
 
 
-.link::after {
+.link.external::after {
 	content: "↗";
+	font-weight: bold;
+	color: currentColor;
+	padding-right: 3px;
+}
+
+
+.link.internal::after {
+	content: "↙";
 	font-weight: bold;
 	color: currentColor;
 	padding-right: 3px;

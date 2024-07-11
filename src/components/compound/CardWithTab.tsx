@@ -11,7 +11,7 @@ interface CardWithTabProps extends IComponent{
 	type ?: CardProps["type"];
 
 }
-
+//bg-gradient-to-b from-[#ffd9f9] to-[#cf5f9b]
 	
 export const CardWithTab = ({classNames = ''.trim(), title, children, type = 'normal' }:CardWithTabProps) => {
 
