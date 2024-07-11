@@ -58,15 +58,19 @@ const togglePopup = (name : string) => {
           
           <MainWindowCard scrollContainerRef = {scrollContainerRef} classNames="my-2 mx-auto w-[75vw]" sectionIds={sectionIds}>
             <section id='about me'>
-              <Card classNames="p-2">
-              <h1>About Me</h1>
+              <Card classNames="p-2 mb-[20px]">
+              <Column classNames="items-center text-center gap-2 mb-[12px]">             
+               <h1>About Me</h1>
               Hi, my name is Kinsley Crowdis and I am a student at East Tennessee State University. This year I began my internship with Blue Cross Blue Shield Tennessee. This website documents what I did during my time there.
               <br/>
+              <h2>Vision Statement</h2>
               I want to contribute to the world positively
               <br/>
+              <h2>Career Goals</h2>
               In my career I want to be apart of something
               <br/>
               <Link type="internal" callback={() => togglePopup('resume')}>Click here to view my resume.</Link>
+              </Column>
               <section id='contact'>
               <Column classNames="text-center">
                 <h2>Contact Me!</h2>
@@ -75,7 +79,7 @@ const togglePopup = (name : string) => {
               </section>
               </Card>
             </section>
-
+            
             <section id='internship'>
               <h1>Internship</h1>
               <section id='reflection'>
@@ -87,7 +91,6 @@ const togglePopup = (name : string) => {
               <h3>Consumer Portals</h3>
               <h3>Junior Dev</h3>
               <h4>January 22nd - June 7th</h4>
-              
               </Column>
               <Column classNames="items-center mt-[12px]">
                     <CardWithTab classNames='flex w-[50%]' title='API Testing' type="elevated">
@@ -165,8 +168,11 @@ const togglePopup = (name : string) => {
                 </Column>
               </section>
               <section id="second rotation">
+              <Column classNames="text-center p-2">
                 <h2>Second Rotation</h2>
                 <h3>Software Quality Assurance</h3>
+                <h4>June 10th - August 16th</h4>
+              </Column>
               </section>
               <section id="third rotation">
                 <h2>Third Rotation</h2>
