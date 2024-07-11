@@ -1,115 +1,48 @@
-import React, { useRef, useState, useEffect, ReactNode } from 'react'
-import { useSpring, a } from '@react-spring/web'
-import useMeasure from 'react-use-measure'
-import { IComponent } from '../IComponent'
-/*
-interface TreeProps extends IComponent{
-	defaultOpen : boolean
-	name : string
-  children : TreeChild[]
-}
+import { useState, ReactNode } from 'react';
+import plusBox from '../../../public/plus-box.svg'
+import minusBox from '../../../public/minus-box.svg'
+import Image from 'next/image';
+import { Row } from './Row';
+import { IComponent } from '../IComponent';
 
-type TreeChild = {
-  name: ReactNode
-  type : Types
-  icon : ReactNode
-}
-
-type Types = {
-  'pdf' : 'pdf icon',
-  'text' : 'text icon',
-  'email' : 'email icon'
+export interface TreeProps extends IComponent {
+  label: string;
+  icon ?: ReactNode; //if x then icon needs to be folder, if y then icon needs to be file etc (logic implemented in nav card)
+  link ?: boolean;
+  callback ?: () => void;
+  children?: TreeProps[];
+  activeSection ?: string;
+  expandedSections ?: string[];
+  //sectionIds ?: string[];
 }
 
 
-function usePrevious<T>(value: T) {
-  const ref = useRef<T>()
-  useEffect(() => void (ref.current = value), [value])
-  return ref.current
-}
+export const Tree = ({ classNames, label, children, icon, link = false, activeSection, expandedSections, callback }:TreeProps) => {
+  const [isOpen, setIsOpen] = useState(false);
 
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
 
+  const hasChildren = children && children.length > 0
+  const minusIcon = <Image className='w-[20px] h-auto cursor-pointer' src={minusBox} alt='close tree node'/>
+  const plusIcon = <Image className='w-[20px] h-auto cursor-pointer' src={plusBox} alt='open tree node'/>
 
+  const toggleIcon = isOpen ? minusIcon : plusIcon
 
-//https://codesandbox.io/p/sandbox/tree-list-nlzui?file=%2Fsrc%2FApp.tsx%3A40%2C12 
-//oh jeez........
-const Tree = 
-//on click?
-React.memo<
-  React.HTMLAttributes<HTMLDivElement> & {
-    defaultOpen?: boolean
-    name: string | JSX.Element
-  }
->(({ children, name, style, defaultOpen = false }) => {
-  const [isOpen, setOpen] = useState(defaultOpen)
-  const previous = usePrevious(isOpen)
-  const [ref, { height: viewHeight }] = useMeasure()
-  const { height, opacity, y } = useSpring({
-    from: { height: 0, opacity: 0, y: 0 },
-    to: {
-      height: isOpen ? viewHeight : 0,
-      opacity: isOpen ? 1 : 0,
-      y: isOpen ? 0 : 20,
-    },
-  })
-
-  //how to get it to react with scroll.
-  const [activeSection, setActiveSection] = useState<string | null>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.7 }
-    );
-
-    document.querySelectorAll('.section').forEach((section) => {
-      observer.observe(section);
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
 
   return (
-    <nav>
-      {child.map((child) => (
-        <div
-          style={{
-            fontWeight: activeSection === child.name ? 'bold' : 'semibold',
-          }}
-        >
-          {child.name}
+    <div className={classNames}>
+      <div onClick={handleToggle}> {/* this is the node itself*/}
+        <Row classNames={hasChildren && toggleIcon ? '' : 'ml-1' }>
+          {hasChildren && toggleIcon } {icon} {link ? <a onClick={callback} href={`#${label}`}>{label}</a> : label }
+        </Row>
+      </div>
+      {isOpen && children?.map((section, index) => (
+        <div className={`ml-4`} key={index}>
+            <Tree key={index} {...section}/>
         </div>
       ))}
-    </nav>
+    </div>
   );
-
-
-
-  // @ts-ignore
-  const Icon = Icons[`${children ? (isOpen ? 'Minus' : 'Plus') : 'Close'}SquareO`]
-  return (
-    <Frame> //card
-      <Icon style={{ ...toggle, opacity: children ? 1 : 0.3 }} onClick={() => setOpen(!isOpen)} />
-      <Title style={style}>{name}</Title>
-      <Content //children
-        style={{
-          opacity,
-          height: isOpen && previous === isOpen ? 'auto' : height,
-        }}>
-        <a.div ref={ref} style={{ y }} children={children} />
-      </Content>
-    </Frame>
-  )
-})
-}
-
-export default Tree
-*/
+};

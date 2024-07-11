@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'base.css';
 
 
 @layer utilities {
@@ -11,6 +10,49 @@
 }
 
 @font-face {
-	font-family: sans-serif;
+	font-family: 'MintSans';
 	src: local('MintSans'), url(./MintSansRegular.woff), format('woff');
+}
+
+@font-face {
+  font-family: 'FiraCode';
+  src: local('FiraCode'), url(./FiraCode-VariableFont_wght.ttf), format('ttf');
+}
+
+a:hover{
+  text-decoration: underline;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: all;
+  transition-duration: 300ms;
+}
+
+.body{
+  font-family: 'MintSans', sans-serif;
+}
+
+.nav{
+  font-family: 'FiraCode', monospace;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+h1{
+  font-size:xx-large;
+  font-weight: bolder;
+  text-align: center;
+}
+
+h2{
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+}
+
+h3{
+  font-size: large;
 }

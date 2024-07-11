@@ -1,14 +1,15 @@
 import { ReactNode } from "react";
 import { IComponent } from "../IComponent";
 
-
 //cards
-interface CardProps extends IComponent{
-	title ?: string
-	body : ReactNode
-	type ?: 'title' | 'elevated' | 'normal'
+export interface CardProps extends IComponent{
+	children: ReactNode
+	type ?: 'elevated' | 'normal' | 'rounded'
+	onClick ?: () => void
 }
 
-export const Card =({classNames, title, body, type = 'normal'}: CardProps) => {
-	
+export const Card =({classNames = "", children, type = 'normal', onClick}: CardProps) => {
+		return <div className={`card ${type} ${classNames.trim()}`} onClick={onClick}>
+			<div>{children}</div>
+		</div>
 }

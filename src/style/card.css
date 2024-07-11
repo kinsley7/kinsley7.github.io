@@ -1,0 +1,16 @@
+
+.card{
+	background-color: var(--card-color);
+	
+}
+
+
+.card.elevated{
+	-webkit-box-shadow: 0px 10px 13px 0px rgba(0,0,0,0.06);
+	-moz-box-shadow: 0px 10px 13px 0px rgba(0,0,0,0.06);
+	box-shadow: 0px 10px 13px 0px rgba(0,0,0,0.06);
+}
+
+.card.rounded{
+	border-radius: 27px;
+}

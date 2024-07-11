@@ -1,12 +1,19 @@
 /* all css files import here */
-@import 'button.css';
+@import './card.css';
+@import './button.css';
+@import './tree.css';
+@import './link.css';
 
  /*all colors here */
 :root {
-	--primary-color: #68CDE4;
-	--secondary-color: #4B90A0;
-	--primary-accent: #E8407C;
-	--secondary-accent: #E290B0;
 	--background-color: #FFFBF8;
+	--dark-background-color: #202020;
+	--primary-accent: #E8407C;
+	--primary-color: #E290B0;
+	--secondary-color: #ae2c59;
+	--secondary-accent : #FFC8DB;
+	--card-color: #fafafa;
+	--card-accent: #fdbbe3;
+	--dark-card-color: #252525;
 }
 

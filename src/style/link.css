@@ -1,0 +1,25 @@
+.link{
+	color: var(--primary-accent);
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.link:hover{
+	color: var(--secondary-color);
+}
+
+
+.link.external::after {
+	content: "↗";
+	font-weight: bold;
+	color: currentColor;
+	padding-right: 3px;
+}
+
+
+.link.internal::after {
+	content: "↙";
+	font-weight: bold;
+	color: currentColor;
+	padding-right: 3px;
+}
