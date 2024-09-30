@@ -185,28 +185,32 @@ const togglePopup = (name : string) => {
                 <h3>Software Quality Assurance</h3>
                 <h3>SQA Analyst I</h3>
                 <h4>June 10th - August 16th</h4>
-                <Column classNames=" mt-[12px] mb-[20px] items-center">
-                <Column classNames="items-center mt-[12px]">
-                    <CardWithTab classNames='flex w-[50%]' title='Manual Testing' type="elevated">
-                      During my rotation in this area, I began with manual testing. This type of testing involves manually creating test cases, steps, and then executing them manually.
-                      <br/>
-                      Most of my time in the manual testing area was spent understanding basic concepts and setting the foundation for automation.
-                    </CardWithTab>
-                    <CardWithTab classNames='flex w-[50%]' title='Automated Testing' type="elevated">
-                    <CaptionedImage image={<Image className='w-[90px] rounded-full' src={Icons.Java} alt="Java"/>} caption='Java'/>
-                    <CaptionedImage image={<Image className='w-[90px] rounded-full' src={Icons.Selinum} alt="Selenium"/>} caption='Selenium'/>
-                      The majority of my time was spent creating automated web test scripts using Java and Selenium. 
-                    </CardWithTab>
+                <Column classNames="grid grid-cols-2 gap-4 py-4 items-center">
+                      <CardWithTab classNames='flex' title='Manual Testing' type="elevated">
+                        During my rotation in this area, I began with manual testing. This type of testing involves manually creating test cases and steps, and then executing them manually.
+                        <br/>
+                        Most of my time in the manual testing area was spent understanding basic concepts and setting the foundation for automation.
+                      </CardWithTab>
+                      <CardWithTab classNames='flex' title='Automated Testing' type="elevated">
+                      <Row classNames="justify-center items-center gap-4 p-2">
+                        <CaptionedImage image={<Image className='w-[90px] rounded-full' src={Icons.Java} alt="Java"/>} caption='Java'/>
+                        <CaptionedImage image={<Image className='w-[90px] rounded-full' src={Icons.Selinum} alt="Selenium"/>} caption='Selenium'/>
+                      </Row>
+                        The majority of my time was spent creating automated web test scripts using Java and Selenium. 
+                        <br/>
+                        I met with senior developers on a daily basis, and I successfully completed various tasks and challenges.
+                      </CardWithTab>
                   </Column>
-                <h3 className="!bold">Artifact</h3>
-                <Link type="internal" callback={() => togglePopup('second artifact')}>Click here to read about my experience!</Link>
-                </Column>
+                  <Column classNames=" mt-[12px] mb-[20px] items-center"> 
+                  <h3 className="!bold">Artifact</h3>
+                  <Link type="internal" callback={() => togglePopup('second artifact')}>Click here to read about my experience!</Link>
+                  </Column>
               </Column>
               </section>
               <section id="third rotation">
               <Column classNames="text-center p-2">
                 <h2>Third Rotation</h2>
-                <h3>BlueCard</h3>
+                <h3>ITS</h3>
                 <h3>Junior Dev</h3>
                 <h4>August 21st - December 14th</h4>
               </Column>
