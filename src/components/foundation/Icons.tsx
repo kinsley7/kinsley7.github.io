@@ -13,6 +13,8 @@ import ReactIcon from "../../../public/React-icon.svg"
 import TypeScriptIcon from "../../../public/TypeScript-icon.svg"
 import GitIcon from "../../../public/git-icon-logo-svgrepo-com.svg"
 import TailwindIcon from "../../../public/tailwind-svgrepo-com.svg"
+import JavaIcon from "../../../public/java.svg"
+import SelinumIcon from "../../../public/selenium.svg"
 import CloseIcon from "../../../public/icons8-close.svg"
 
 export const Icons = {
@@ -25,6 +27,8 @@ export const Icons = {
 	TypeScript : TypeScriptIcon,
 	Git : GitIcon,
 	Tailwind : TailwindIcon,
+	Java : JavaIcon,
+	Selinum : SelinumIcon,
 	ChevronUp : Up,
 	ChevronDown : Down,
 	Close : CloseIcon,

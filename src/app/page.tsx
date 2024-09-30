@@ -54,6 +54,18 @@ const togglePopup = (name : string) => {
                               width='500'
                               height="600"/>
                           </WindowPopUp>
+                          <WindowPopUp isOpen={popups['second artifact']} togglePopup={() => togglePopup('second artifact')} title="Rotation 2 Artifact">
+                            <object className="px-2"
+                            data="https://drive.google.com/file/d/1HVvMMK9in5IvNHh8A4yNyZZcHOjqmmEB/preview?pli=1"
+                            width='500'
+                            height="600"/>
+                          </WindowPopUp>
+                          <WindowPopUp isOpen={popups['third artifact']} togglePopup={() => togglePopup('third artifact')} title="Rotation 3 Artifact">
+                            <object className="px-2"
+                            data=""
+                            width='500'
+                            height="600"/>
+                          </WindowPopUp>
           
           
           <MainWindowCard scrollContainerRef = {scrollContainerRef} classNames="my-2 mx-auto w-[75vw]" sectionIds={sectionIds}>
@@ -171,11 +183,33 @@ const togglePopup = (name : string) => {
               <Column classNames="text-center p-2">
                 <h2>Second Rotation</h2>
                 <h3>Software Quality Assurance</h3>
+                <h3>SQA Analyst I</h3>
                 <h4>June 10th - August 16th</h4>
+                <Column classNames=" mt-[12px] mb-[20px] items-center">
+                <Column classNames="items-center mt-[12px]">
+                    <CardWithTab classNames='flex w-[50%]' title='Manual Testing' type="elevated">
+                      During my rotation in this area I started with manual testing. This kind of testing is manually creating test cases, steps, and manually going through them.
+                      <br/>
+                      Most of my time in the manual testing area was spent understanding basic concepts and setting the foundation for automation.
+                    </CardWithTab>
+                    <CardWithTab classNames='flex w-[50%]' title='Automated Testing' type="elevated">
+                    <CaptionedImage image={<Image className='w-[90px] rounded-full' src={Icons.Java} alt="Java"/>} caption='Java'/>
+                    <CaptionedImage image={<Image className='w-[90px] rounded-full' src={Icons.Selinum} alt="Selenium"/>} caption='Selenium'/>
+                      The majority of my time was spent creating automated test scripts using Java and Selenium.
+                    </CardWithTab>
+                  </Column>
+                <h3 className="!bold">Artifact</h3>
+                <Link type="internal" callback={() => togglePopup('second artifact')}>Click here to read about my experience!</Link>
+                </Column>
               </Column>
               </section>
               <section id="third rotation">
+              <Column classNames="text-center p-2">
                 <h2>Third Rotation</h2>
+                <h3>BlueCard</h3>
+                <h3>Junior Dev</h3>
+                <h4>August 21st - December 14th</h4>
+              </Column>
               </section>
             </section>
           </MainWindowCard>
