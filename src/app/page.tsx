@@ -188,14 +188,14 @@ const togglePopup = (name : string) => {
                 <Column classNames=" mt-[12px] mb-[20px] items-center">
                 <Column classNames="items-center mt-[12px]">
                     <CardWithTab classNames='flex w-[50%]' title='Manual Testing' type="elevated">
-                      During my rotation in this area I started with manual testing. This kind of testing is manually creating test cases, steps, and manually going through them.
+                      During my rotation in this area, I began with manual testing. This type of testing involves manually creating test cases, steps, and then executing them manually.
                       <br/>
                       Most of my time in the manual testing area was spent understanding basic concepts and setting the foundation for automation.
                     </CardWithTab>
                     <CardWithTab classNames='flex w-[50%]' title='Automated Testing' type="elevated">
                     <CaptionedImage image={<Image className='w-[90px] rounded-full' src={Icons.Java} alt="Java"/>} caption='Java'/>
                     <CaptionedImage image={<Image className='w-[90px] rounded-full' src={Icons.Selinum} alt="Selenium"/>} caption='Selenium'/>
-                      The majority of my time was spent creating automated test scripts using Java and Selenium.
+                      The majority of my time was spent creating automated web test scripts using Java and Selenium. 
                     </CardWithTab>
                   </Column>
                 <h3 className="!bold">Artifact</h3>
