@@ -16,6 +16,14 @@ import TailwindIcon from "../../../public/tailwind-svgrepo-com.svg"
 import JavaIcon from "../../../public/java.svg"
 import SelinumIcon from "../../../public/selenium.svg"
 import CloseIcon from "../../../public/icons8-close.svg"
+import PythonIcon from "../../../public/Python.svg"
+import CSharp from "../../../public/c-sharp-svgrepo-com.svg"
+import Cobol from "../../../public/cobol-svgrepo-com.svg"
+import Github from "../../../public/1608908_github_icon.svg"
+
+import picofme from "../../../public/picofme.jpg"
+import partycreator from "../../../public/party-creator-command.png"
+import eventcreator from "../../../public/event-creator-command.png"
 
 export const Icons = {
 	Navigation : NavigationIcon,
@@ -34,5 +42,12 @@ export const Icons = {
 	Close : CloseIcon,
 	PDF : PDFIcon,
 	Document : DocumentIcon,
-	Video : VideoIcon
+	Video : VideoIcon,
+	Python : PythonIcon,
+	CSharp : CSharp,
+	Cobol : Cobol,
+	Github : Github,
+	pictureOfMe : picofme,
+	partyCreator : partycreator,
+	eventCreator : eventcreator
 }

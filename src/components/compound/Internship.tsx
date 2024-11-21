@@ -22,7 +22,7 @@ export const Internship = ({togglePopup} : InternshipProps) => {
               <section id='reflection'>
                 video reflection goes here
               </section>
-              <section id='first rotation'>
+              <section id='first-rotation'>
               <Column classNames="text-center p-2">
               <h2>First Rotation</h2>
               <h3>Consumer Portals</h3>
@@ -104,7 +104,7 @@ export const Internship = ({togglePopup} : InternshipProps) => {
                 <Link type="internal" callback={() => togglePopup('first artifact')}>Click here to read about my experience!</Link>
                 </Column>
               </section>
-              <section id="second rotation">
+              <section id="second-rotation">
               <Column classNames="text-center p-2">
                 <h2>Second Rotation</h2>
                 <h3>Software Quality Assurance</h3>
@@ -132,15 +132,25 @@ export const Internship = ({togglePopup} : InternshipProps) => {
                   </Column>
               </Column>
               </section>
-              <section id="third rotation">
+              <section id="third-rotation">
               <Column classNames="text-center p-2">
                 <h2>Third Rotation</h2>
-                <h3>ITS</h3>
+                <h3>ITS BlueCard</h3>
                 <h3>Junior Dev</h3>
                 <h4>August 21st - December 14th</h4>
-                <CardWithTab classNames='flex' title='Colbol Conversion' type="elevated">
-                      hi
-                </CardWithTab>
+              </Column>
+              <Column classNames="items-center">
+                <CardWithTab classNames='flex w-[50%] text-center' title='Cobol Conversion' type="elevated">
+                <Row classNames="justify-center items-center gap-4 p-2">
+                        <CaptionedImage image={<Image className='w-[90px] rounded-full' src={Icons.Cobol} alt="Cobol"/>} caption='Cobol'/>
+                        <CaptionedImage image={<Image className='w-[96px] rounded-full' src={Icons.CSharp} alt="C#"/>} caption='C#'/>
+                      </Row>
+                  The team I worked with during this rotation was part of a large transition, and one of the projects was converting old Cobol code into C#. I played a part and worked on converting with another team member.
+				        </CardWithTab>
+                <Column classNames=" mt-[12px] mb-[20px] items-center"> 
+                  <h3 className="!bold">Artifact</h3>
+                  <Link type="internal" callback={() => togglePopup('third artifact')}>Click here to read about my experience!</Link>
+                  </Column>
               </Column>
               </section>
             </section>

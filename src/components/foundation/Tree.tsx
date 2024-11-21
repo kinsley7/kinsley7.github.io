@@ -4,7 +4,7 @@ import minusBox from '../../../public/minus-box.svg'
 import Image from 'next/image';
 import { Row } from './Row';
 import { IComponent } from '../IComponent';
-import { Link } from 'wouter';
+import { Link, useLocation } from 'wouter';
 
 export interface TreeProps extends IComponent {
   label: string;
@@ -33,12 +33,11 @@ export const Tree = ({ classNames, label, children, icon, linkName, activeSectio
 
   const toggleIcon = isOpen ? minusIcon : plusIcon
 
-
   return (
     <div className={classNames}>
       <div onClick={handleToggle}> {/* this is the node itself*/}
         <Row classNames={hasChildren && toggleIcon ? '' : 'ml-1' }>
-          {hasChildren && toggleIcon } {icon} {<Link onClick={callback} href={`/${linkName}`}>{label}</Link>}
+          {hasChildren && toggleIcon } {icon} {<Link className='scroll-smooth' onClick={callback} href={`/${linkName}`}>{label}</Link>}
         </Row>
       </div>
       {isOpen && children?.map((section, index) => (
