@@ -265,7 +265,7 @@ useEffect(() => { if (location.includes('#')) { const elementId = location.split
     </main>
   );
 }
-function dynamic(arg0: () => Promise<typeof import("./pages/internship")>, arg1: { ssr: boolean; }) {
+function dynamic(arg0: () => Promise<typeof import("./internship")>, arg1: { ssr: boolean; }) {
   throw new Error("Function not implemented.");
 }
 
