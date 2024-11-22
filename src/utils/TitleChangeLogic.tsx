@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef, useCallback, RefObject, Fragment } from 'react';
 import { Link, Events, scrollSpy } from 'react-scroll';
-import { useLocation } from 'wouter';
 
 interface TitleChangeLogicProps {
   sectionIds: string[];
@@ -9,7 +8,6 @@ interface TitleChangeLogicProps {
 
 export const TitleChangeLogic =  ({ sectionIds, scrollContainerRef } : TitleChangeLogicProps) => {
   const [activeSection, setActiveSection] = useState<string>('');
-  const [location] = useLocation(); // Get the current path
   
   const handleScroll = useCallback(() => {
     const container = scrollContainerRef.current;
@@ -69,7 +67,6 @@ export const TitleChangeLogic =  ({ sectionIds, scrollContainerRef } : TitleChan
   return (
     <>
       <div>
-        {getPageTitle(location)}
         {sections.map((section, index) => (
           <Fragment key={index}>
             <a href={`#${section.trim()}`}>

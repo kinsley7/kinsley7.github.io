@@ -8,7 +8,7 @@ import { Row } from "../foundation/Row";
 import { Icons } from "../foundation/Icons";
 import Image from "next/image";
 
-interface AboutMeProps extends IComponent{ 
+export interface AboutMeProps extends IComponent{ 
 	togglePopup: (name: string) => void; 
 }
 
@@ -46,3 +46,4 @@ export const AboutMe = ({togglePopup} : AboutMeProps) => {
 		</section>
 	)
 }
+

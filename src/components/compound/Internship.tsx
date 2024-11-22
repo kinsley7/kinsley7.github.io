@@ -11,7 +11,7 @@ import { PillBox } from "./PillBox"
 import Image from "next/image";
 import { IComponent } from "../IComponent"
 
-interface InternshipProps extends IComponent { 
+export interface InternshipProps extends IComponent { 
 	togglePopup: (name: string) => void; 
 }
 

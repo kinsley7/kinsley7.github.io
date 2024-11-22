@@ -21,23 +21,23 @@ export const NavigationCard = ({togglePopupResume}:NavigationCardProps) => {
 
 	const treeData: TreeProps = {
 		label: 'home',
-		linkName: '',
+		linkName: 'about-me',
 		icon: <Image className="w-[20px] mr-1" src={Icons.Folder} alt=""/>,
 		children: [
 		  {
 			label: 'about-me',
-			linkName: '',
+			linkName: 'about-me',
 			icon: <Image className="w-[20px] mr-1" src={Icons.Folder} alt=""/>,
 			children: [
 				{
 					label: 'resume',
-					linkName: '',
+					linkName: 'about-me#resume',
 					icon: <Image className="w-[20px] mr-1" src={Icons.PDF} alt=""/>,
 					callback: togglePopupResume
 				},
 				{
 					label: 'contact',
-					linkName: '',
+					linkName: 'about-me#contact',
 					icon: <Image className="w-[20px] mr-1" src={Icons.Email} alt=""/>,
 				},
 			],

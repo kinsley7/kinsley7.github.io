@@ -4,7 +4,7 @@ import minusBox from '../../../public/minus-box.svg'
 import Image from 'next/image';
 import { Row } from './Row';
 import { IComponent } from '../IComponent';
-import { Link } from 'wouter';
+import Link from 'next/link';
 //import { Link, useLocation } from 'wouter';
 
 export interface TreeProps extends IComponent {
