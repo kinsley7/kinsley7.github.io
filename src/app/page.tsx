@@ -22,12 +22,12 @@ import  { PDFViewer }  from "@/components/compound/PDFViewer";
 import { WindowPopUp } from "@/components/compound/WindowPopUp";
 
 import {SchoolArtifacts} from '@/components/compound/SchoolArtifacts'
-import { Route, Router, Switch, useLocation } from "wouter";
+import { Route, Router, Switch, useLocation, Link } from "wouter";
 import { AboutMe } from "@/components/compound/AboutMe";
 import { Internship } from "@/components/compound/Internship";
 import { useHashLocation } from "wouter/use-hash-location";
 import { useBrowserLocation } from "wouter/use-browser-location";
-import Link from "next/link";
+
 
 //homepage
 export default function Home() { 
@@ -77,21 +77,12 @@ useEffect(() => { if (location.includes('#')) { const elementId = location.split
           
           
           <MainWindowCard scrollContainerRef = {scrollContainerRef} classNames="my-2 mx-auto w-[75vw]" sectionIds={sectionIds}>
-           
-                  <>
-              <Link href="/">
-                <a><AboutMe classNames="justify-center" togglePopup={togglePopup} /></a>
-              </Link>
-              <Link href="/school-artifacts">
-                <a><SchoolArtifacts /></a>
-              </Link>
-              <Link href="/internship">
-                <a><Internship togglePopup={togglePopup} /></a>
-              </Link>
-            </>
-            {/*
-            <Route path={'/'}>{<AboutMe classNames="justify-center" togglePopup={togglePopup}/>}</Route>
+      
             
+            <Route path={'/'}>{<AboutMe classNames="justify-center" togglePopup={togglePopup}/>}</Route>
+            <Route path="/school-artifacts">{<SchoolArtifacts/>}</Route>
+            <Route path={"/internship"}>{<Internship togglePopup={togglePopup}/>}</Route>
+            {/*
            <section id='about me'>
               <Card classNames="p-2 mb-[20px]">
               <Column classNames="items-center text-center gap-2 mb-[12px]">             
@@ -116,7 +107,6 @@ useEffect(() => { if (location.includes('#')) { const elementId = location.split
               </section>
               
 
-            <Route path="/school-artifacts">{<SchoolArtifacts/>}</Route>
           
             <section id="school artifacts">
             Here is work I did during my time in class at ETSU.
@@ -131,7 +121,6 @@ useEffect(() => { if (location.includes('#')) { const elementId = location.split
             </CardWithTab>
             </section>
             
-            <Route path={"/internship"}>{<Internship togglePopup={togglePopup}/>}</Route>
             
              <section id='internship'>
               <h1>Internship</h1>
@@ -265,7 +254,3 @@ useEffect(() => { if (location.includes('#')) { const elementId = location.split
     </main>
   );
 }
-function dynamic(arg0: () => Promise<typeof import("./internship")>, arg1: { ssr: boolean; }) {
-  throw new Error("Function not implemented.");
-}
-
