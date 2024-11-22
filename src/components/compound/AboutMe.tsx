@@ -1,3 +1,4 @@
+'use client'
 import { ReactNode } from "react";
 import { Card } from "../foundation/Card"
 import { Column } from "../foundation/Column"
