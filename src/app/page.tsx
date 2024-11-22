@@ -18,12 +18,11 @@ import { Accordion } from "@/components/foundation/Accordion";
 import { PillBox } from "@/components/compound/PillBox";
 import { Label } from "@headlessui/react";
 import { AccordionInfo } from "@/components/compound/AccordionInfo";
-import { Link } from "@/components/foundation/Link";
 import  { PDFViewer }  from "@/components/compound/PDFViewer";
 import { WindowPopUp } from "@/components/compound/WindowPopUp";
 
 import {SchoolArtifacts} from '@/components/compound/SchoolArtifacts'
-import { Route, Router, Switch, useLocation } from "wouter";
+import { Route, Router, Switch, useLocation, Link } from "wouter";
 import { AboutMe } from "@/components/compound/AboutMe";
 import { Internship } from "@/components/compound/Internship";
 import { useHashLocation } from "wouter/use-hash-location";
@@ -78,6 +77,7 @@ useEffect(() => { if (location.includes('#')) { const elementId = location.split
           
           
           <MainWindowCard scrollContainerRef = {scrollContainerRef} classNames="my-2 mx-auto w-[75vw]" sectionIds={sectionIds}>
+           
             <Route path={'/'}>{<AboutMe classNames="justify-center" togglePopup={togglePopup}/>}</Route>
             {/*
            <section id='about me'>

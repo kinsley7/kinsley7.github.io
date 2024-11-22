@@ -100,4 +100,3 @@ export const NavigationCard = ({togglePopupResume}:NavigationCardProps) => {
 	</Draggable>
 	</>
 }
-

@@ -23,11 +23,12 @@ export const AboutMe = ({togglePopup} : AboutMeProps) => {
 			<Column classNames="items-center text-center gap-2 mb-[12px]">             
 			<div className="w-[60%]">
 			<h1>About Me</h1>
-			Hi, my name is Kinsley Crowdis and I am a student at East Tennessee State University. This year I began my internship with Blue Cross Blue Shield Tennessee. This website documents what I did during my time there as well as my work I did as a student.
+
+			Hi, my name is Kinsley Crowdis and I am a student at East Tennessee State University and I am in the accelerated BlueSky program. This year I began my internship with Blue Cross Blue Shield Tennessee. This website documents what I did during my time there as well as my work I did as a student.
 			<br/>
 			<h2>Vision Statement</h2>
-			
-			<br/>
+			I want to grow as a professional in the technology field, always learning and using my skills to help others. I want to make a positive impact through collaboration and sharing knowledge.			
+      <br/>
 			<h2>Career Goals</h2>
 			I want to continue learning, expanding my knowledge, and giving back by teaching others what I learned.
 			<br/>
