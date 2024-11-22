@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { createRef, ReactNode, useState } from "react";
 import { IComponent } from "../IComponent";
 import { CardWithTab } from "./CardWithTab";
 import Draggable from "react-draggable";
@@ -17,16 +17,18 @@ interface WindowPopUpProps extends IComponent{
 	togglePopup ?: () => void
 }
 
+
 export const WindowPopUp = ({classNames, title, children, isOpen, togglePopup}:WindowPopUpProps) => {
 	
 	if (!isOpen) {
 		return null;
 	}
+	const wrapper = createRef();
 	  
 	const dragHandlers = DragHandlers();
 	return <>
 		<Draggable handle="div" {...dragHandlers}>
-			<div className="cursor-move absolute z-50 max-w-fit transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in">
+			<div  className="cursor-move absolute z-50 max-w-fit transition-opacity data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in">
 				<div className={classNames}>
 						<Card type='elevated' classNames=" nav border-[1px] border-[var(--card-accent)] rounded-md">
 							<Card classNames="border-b-[1px] border-[var(--card-accent)] rounded-t-md">

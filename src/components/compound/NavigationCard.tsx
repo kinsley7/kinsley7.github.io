@@ -21,50 +21,57 @@ export const NavigationCard = ({togglePopupResume}:NavigationCardProps) => {
 
 	const treeData: TreeProps = {
 		label: 'home',
-		link: true,
+		linkName: '',
 		icon: <Image className="w-[20px] mr-1" src={Icons.Folder} alt=""/>,
 		children: [
 		  {
-			label: 'about me',
-			link: true,
+			label: 'about-me',
+			linkName: '',
 			icon: <Image className="w-[20px] mr-1" src={Icons.Folder} alt=""/>,
 			children: [
 				{
 					label: 'resume',
-					link: true,
+					linkName: '',
 					icon: <Image className="w-[20px] mr-1" src={Icons.PDF} alt=""/>,
 					callback: togglePopupResume
 				},
 				{
 					label: 'contact',
-					link: true,
+					linkName: '',
 					icon: <Image className="w-[20px] mr-1" src={Icons.Email} alt=""/>,
 				},
 			],
 			},
 			{
+				label : 'school-artifacts',
+				linkName : 'school-artifacts',
+				icon : <Image className="w-[20px] mr-1" src={Icons.Document} alt=""/>,
+				children: [
+					{
+						label: 'reflection',
+						linkName: 'school-artifacts#reflection',
+						icon : <Image className="w-[20px] mr-1" src={Icons.Video} alt=""/>,
+					}
+				]
+			},
+			{
 			label : 'internship',
-			link: true,
+			linkName: 'internship',
 			icon: <Image className="w-[20px] mr-1" src={Icons.Folder} alt=""/>,
 			children: [
 				{
-					label: 'reflection',
-					link: true,
-					icon : <Image className="w-[20px] mr-1" src={Icons.Video} alt=""/>,
-				},
-				{
-					label: 'first rotation',
-					link: true,
+					label: 'first-rotation',
+					linkName: 'internship#first-rotation',
 					icon : <Image className="w-[20px] mr-1" src={Icons.Document} alt=""/>,
 				},
 				{
-					label: 'second rotation',
-					link: true,
+					label: 'second-rotation',
+					linkName: 'internship#second-rotation',
 					icon : <Image className="w-[20px] mr-1" src={Icons.Document} alt=""/>,
 				},
 				{
-					label: 'third rotation',
-					link: true,
+					label: 'third-rotation',
+					linkName: 'internship#third-rotation',
 					icon : <Image className="w-[20px] mr-1" src={Icons.Document} alt=""/>,
 				},
 			],
@@ -93,4 +100,3 @@ export const NavigationCard = ({togglePopupResume}:NavigationCardProps) => {
 	</Draggable>
 	</>
 }
-

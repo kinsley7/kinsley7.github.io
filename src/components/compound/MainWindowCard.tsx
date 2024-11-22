@@ -28,7 +28,7 @@ export const MainWindowCard = ({classNames = ''.trim(), children, sectionIds, sc
 							<Image src={hellokitty} alt='' className="justify-self-end w-[30px] hover:scale-50"/>
 						</Row>
 					</Card>
-					<Column ref={scrollContainerRef} classNames="!p-4 overflow-y-auto h-[85vh] body">
+					<Column ref={scrollContainerRef} classNames="!p-4 overflow-y-auto h-[85vh] body justify-around">
 						{children}
 					</Column>
 				</Card>

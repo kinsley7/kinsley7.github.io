@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useState} from "react";
+import { useRef, useState, useEffect} from "react";
 import Image from "next/image";
 import { MainWindowCard } from "@/components/compound/MainWindowCard";
 import { Spacer } from "@/components/foundation/Spacer";
@@ -18,14 +18,20 @@ import { Accordion } from "@/components/foundation/Accordion";
 import { PillBox } from "@/components/compound/PillBox";
 import { Label } from "@headlessui/react";
 import { AccordionInfo } from "@/components/compound/AccordionInfo";
-import { Link } from "@/components/foundation/Link";
 import  { PDFViewer }  from "@/components/compound/PDFViewer";
 import { WindowPopUp } from "@/components/compound/WindowPopUp";
 
+import {SchoolArtifacts} from '@/components/compound/SchoolArtifacts'
+import { Route, Router, Switch, useLocation, Link } from "wouter";
+import { AboutMe } from "@/components/compound/AboutMe";
+import { Internship } from "@/components/compound/Internship";
+import { useHashLocation } from "wouter/use-hash-location";
+import { useBrowserLocation } from "wouter/use-browser-location";
 
 //homepage
 export default function Home() { 
-  const sectionIds = ['about me', 'contact', 'internship', 'first rotation', 'second rotation', 'third rotation'];
+
+  const sectionIds = ['about me', 'contact', 'school artifacts', 'internship', 'first rotation', 'second rotation', 'third rotation'];
   const scrollContainerRef = useRef(null);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -38,8 +44,11 @@ const togglePopup = (name : string) => {
     [name]: !popups[name]
   });
 }
+const [location] = useLocation();
+useEffect(() => { if (location.includes('#')) { const elementId = location.split('#')[1]; const element = document.getElementById(elementId); if (element) { element.scrollIntoView({ behavior: 'smooth' }); } } }, [location]);
+
     return (
-    <main>
+      <main>
           <NavigationCard togglePopupResume={() => togglePopup('resume')}/>
           <WindowPopUp isOpen={popups['resume']} togglePopup={() => togglePopup('resume')} title="Resume">
                             <object className="px-2"
@@ -47,7 +56,6 @@ const togglePopup = (name : string) => {
                               width='500'
                               height="600"/>
                           </WindowPopUp>
-
                           <WindowPopUp isOpen={popups['first artifact']} togglePopup={() => togglePopup('first artifact')} title="Rotation 1 Artifact">
                             <object className="px-2"
                               data="https://drive.google.com/file/d/1FLrt7WGrXK4VMq-X2F9KDyDQompA1lWP/preview?pli=1"
@@ -62,17 +70,20 @@ const togglePopup = (name : string) => {
                           </WindowPopUp>
                           <WindowPopUp isOpen={popups['third artifact']} togglePopup={() => togglePopup('third artifact')} title="Rotation 3 Artifact">
                             <object className="px-2"
-                            data=""
+                            data="https://drive.google.com/file/d/12Gu7kTqIoBpIM6lGL9K9FQmkGDfNtj5V/preview?pli=1"
                             width='500'
                             height="600"/>
                           </WindowPopUp>
           
           
           <MainWindowCard scrollContainerRef = {scrollContainerRef} classNames="my-2 mx-auto w-[75vw]" sectionIds={sectionIds}>
-            <section id='about me'>
+           
+            <Route path={'/'}>{<AboutMe classNames="justify-center" togglePopup={togglePopup}/>}</Route>
+            {/*
+           <section id='about me'>
               <Card classNames="p-2 mb-[20px]">
               <Column classNames="items-center text-center gap-2 mb-[12px]">             
-               <h1>About Me</h1>
+              <h1>About Me</h1>
               Hi, my name is Kinsley Crowdis and I am a student at East Tennessee State University. This year I began my internship with Blue Cross Blue Shield Tennessee. This website documents what I did during my time there.
               <br/>
               <h2>Vision Statement</h2>
@@ -85,17 +96,35 @@ const togglePopup = (name : string) => {
               </Column>
               <section id='contact'>
               <Column classNames="text-center">
-                <h2>Contact Me!</h2>
-                You can reach out to me at: <span className="font-bold">crowdis@etsu.edu</span>
+              <h2>Contact Me!</h2>
+              You can reach out to me at: <span className="font-bold">crowdis@etsu.edu</span>
               </Column>
               </section>
               </Card>
+              </section>
+              */}
+
+            <Route path="/school-artifacts">{<SchoolArtifacts/>}</Route>
+          {/*
+            <section id="school artifacts">
+            Here is work I did during my time in class at ETSU.
+            <CardWithTab title="Discord Bot Project">
+            One of the coolest projects I did was in my ___ class. We were tasked to create a bot on Discord, a social media platform. With the bot I created commands that would be catered towards a gaming community. This included a party finder, giveaways, and multiple news and game update commands. 
+            This was a four person group project and we used Python.
+            <Link type="external" url="https://github.com/kinsley7/discordbotprj">Feel free to check it out!</Link>
+            </CardWithTab>
+            <CardWithTab title="League of Legends Console Tracker">
+            Another assignment for this same class required we use an API an create a console app with it. I created an intuitive menu using the arrow keys to navigate and allowed the user to check stats, achievements, and see real-time match stats.
+            <Link type="external" url="https://github.com/kinsley7/lab5">Feel free to check this one out too!</Link>
+            </CardWithTab>
             </section>
+            */}
+            <Route path={"/internship"}>{<Internship togglePopup={togglePopup}/>}</Route>
             
-            <section id='internship'>
+            {/* <section id='internship'>
               <h1>Internship</h1>
               <section id='reflection'>
-                video reflection goes here
+              video reflection goes here
               </section>
               <section id='first rotation'>
               <Column classNames="text-center p-2">
@@ -213,9 +242,13 @@ const togglePopup = (name : string) => {
                 <h3>ITS</h3>
                 <h3>Junior Dev</h3>
                 <h4>August 21st - December 14th</h4>
+                <CardWithTab classNames='flex' title='Colbol Conversion' type="elevated">
+                      hi
+                </CardWithTab>
               </Column>
               </section>
             </section>
+            {*/}
           </MainWindowCard>
     </main>
   );
