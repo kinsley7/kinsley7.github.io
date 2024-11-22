@@ -22,11 +22,12 @@ import  { PDFViewer }  from "@/components/compound/PDFViewer";
 import { WindowPopUp } from "@/components/compound/WindowPopUp";
 
 import {SchoolArtifacts} from '@/components/compound/SchoolArtifacts'
-import { Route, Router, Switch, useLocation, Link } from "wouter";
+import { Route, Router, Switch, useLocation } from "wouter";
 import { AboutMe } from "@/components/compound/AboutMe";
 import { Internship } from "@/components/compound/Internship";
 import { useHashLocation } from "wouter/use-hash-location";
 import { useBrowserLocation } from "wouter/use-browser-location";
+import Link from "next/link";
 
 //homepage
 export default function Home() { 
@@ -47,17 +48,7 @@ const togglePopup = (name : string) => {
 const [location] = useLocation();
 useEffect(() => { if (location.includes('#')) { const elementId = location.split('#')[1]; const element = document.getElementById(elementId); if (element) { element.scrollIntoView({ behavior: 'smooth' }); } } }, [location]);
 
-const [isClient, setIsClient] = useState(false);
 
-// This ensures that the routing logic is only enabled in the browser
-useEffect(() => {
-  setIsClient(true);
-}, []);
-
-if (!isClient) {
-  // If it's not a client-side environment, return null or some placeholder
-  return null;
-}
     return (
       <main>
           <NavigationCard togglePopupResume={() => togglePopup('resume')}/>
@@ -89,8 +80,20 @@ if (!isClient) {
           
           <MainWindowCard scrollContainerRef = {scrollContainerRef} classNames="my-2 mx-auto w-[75vw]" sectionIds={sectionIds}>
            
-            <Route path={'/'}>{<AboutMe classNames="justify-center" togglePopup={togglePopup}/>}</Route>
+                  <>
+              <Link href="/">
+                <a><AboutMe classNames="justify-center" togglePopup={togglePopup} /></a>
+              </Link>
+              <Link href="/school-artifacts">
+                <a><SchoolArtifacts /></a>
+              </Link>
+              <Link href="/internship">
+                <a><Internship togglePopup={togglePopup} /></a>
+              </Link>
+            </>
             {/*
+            <Route path={'/'}>{<AboutMe classNames="justify-center" togglePopup={togglePopup}/>}</Route>
+            
            <section id='about me'>
               <Card classNames="p-2 mb-[20px]">
               <Column classNames="items-center text-center gap-2 mb-[12px]">             
@@ -113,10 +116,10 @@ if (!isClient) {
               </section>
               </Card>
               </section>
-              */}
+              
 
             <Route path="/school-artifacts">{<SchoolArtifacts/>}</Route>
-          {/*
+          
             <section id="school artifacts">
             Here is work I did during my time in class at ETSU.
             <CardWithTab title="Discord Bot Project">
@@ -129,10 +132,10 @@ if (!isClient) {
             <Link type="external" url="https://github.com/kinsley7/lab5">Feel free to check this one out too!</Link>
             </CardWithTab>
             </section>
-            */}
+            
             <Route path={"/internship"}>{<Internship togglePopup={togglePopup}/>}</Route>
             
-            {/* <section id='internship'>
+             <section id='internship'>
               <h1>Internship</h1>
               <section id='reflection'>
               video reflection goes here
