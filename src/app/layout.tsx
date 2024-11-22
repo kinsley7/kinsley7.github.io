@@ -1,4 +1,4 @@
-'use client'
+
 import type { Metadata } from "next";
 import "@/style/globals.css";
 import "@/style/base.css";
