@@ -23,13 +23,13 @@ export const AboutMe = ({togglePopup} : AboutMeProps) => {
 			<Column classNames="items-center text-center gap-2 mb-[12px]">             
 			<div className="w-[60%]">
 			<h1>About Me</h1>
-			Hi, my name is Kinsley Crowdis and I am a student at East Tennessee State University. This year I began my internship with Blue Cross Blue Shield Tennessee. This website documents what I did during my time there.
+			Hi, my name is Kinsley Crowdis and I am a student at East Tennessee State University. This year I began my internship with Blue Cross Blue Shield Tennessee. This website documents what I did during my time there as well as my work I did as a student.
 			<br/>
 			<h2>Vision Statement</h2>
-			I want to contribute to the world positively
+			
 			<br/>
 			<h2>Career Goals</h2>
-			In my career I want to be apart of something
+			I want to continue learning, expanding my knowledge, and giving back by teaching others what I learned.
 			<br/>
 			<Link type="internal" callback={() => togglePopup('resume')}>Click here to view my resume.</Link>
 			<section id='contact'>

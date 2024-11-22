@@ -17,12 +17,10 @@ interface InternshipProps extends IComponent {
 
 export const Internship = ({togglePopup} : InternshipProps) => {
 	return (
-		<section id='internship'>
-              <h1>Internship</h1>
-              <section id='reflection'>
-                video reflection goes here
-              </section>
-              <section id='first-rotation'>
+		<section id='internship' className="text-center pt-5">
+      <h1>Internship</h1>
+      <h3>This page describes what I did during my internship with BCBST and each team I worked with!</h3>
+              <section id='first-rotation' className="pt-5">
               <Column classNames="text-center p-2">
               <h2>First Rotation</h2>
               <h3>Consumer Portals</h3>
@@ -92,7 +90,7 @@ export const Internship = ({togglePopup} : InternshipProps) => {
                       <CaptionedImage image={<Image className='w-[90px] rounded-full' src={Icons.Git} alt="Git"/>} caption='Git'/>
                       <CaptionedImage image={<Image className='w-[90px] rounded-full' src={Icons.Tailwind} alt="Tailwind"/>} caption='Tailwind CSS'/>
                     </Row>
-                     During the latter half of this rotation, I had the opportunity to assist in building their new website. This exciting experience allowed me to learn new tools and languages such as React, TypeScript, and Tailwind. I utilized my knowledge from this experience to create everything you see here.
+                     During the latter half of this rotation, I had the opportunity to assist in building their new website. This exciting experience allowed me to learn new tools and languages such as React, TypeScript, and Tailwind. I utilized my knowledge from this experience to create this website and everything you see here.
                      <br/>
                      <br/>
                      I constructed components based on a prototype. 

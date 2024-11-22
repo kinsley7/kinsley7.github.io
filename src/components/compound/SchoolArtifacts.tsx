@@ -14,8 +14,12 @@ interface SchoolArtifactsProps extends IComponent{
 export const SchoolArtifacts = ({} : SchoolArtifactsProps) => {
 	return (
 	<section id="school artifacts" className="text-center">
-    <h2>School Artifacts</h2>
-              Here is work I did during my time in class at ETSU. There is more located on my <Link type="external" url="https://github.com/kinsley7">Github!</Link>
+    <h1>School Artifacts</h1>
+              <h2>Video Reflection</h2>
+              <section id='reflection'>
+                video reflection goes here
+              </section>
+              <h3>Here are examples of work I did during my time in class at ETSU. There is more located on my <Link type="external" url="https://github.com/kinsley7">Github!</Link></h3>
               <Row classNames="justify-center items-center gap-4 p-2">
                 <CardWithTab title="Discord Bot Project" classNames="text-center items-center">
                   <Row classNames="justify-center gap-4 p-2">

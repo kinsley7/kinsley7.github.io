@@ -45,18 +45,20 @@ export const NavigationCard = ({togglePopupResume}:NavigationCardProps) => {
 			{
 				label : 'school-artifacts',
 				linkName : 'school-artifacts',
-				icon : <Image className="w-[20px] mr-1" src={Icons.Document} alt=""/>
+				icon : <Image className="w-[20px] mr-1" src={Icons.Document} alt=""/>,
+				children: [
+					{
+						label: 'reflection',
+						linkName: 'school-artifacts#reflection',
+						icon : <Image className="w-[20px] mr-1" src={Icons.Video} alt=""/>,
+					}
+				]
 			},
 			{
 			label : 'internship',
 			linkName: 'internship',
 			icon: <Image className="w-[20px] mr-1" src={Icons.Folder} alt=""/>,
 			children: [
-				{
-					label: 'reflection',
-					linkName: 'internship#reflection',
-					icon : <Image className="w-[20px] mr-1" src={Icons.Video} alt=""/>,
-				},
 				{
 					label: 'first-rotation',
 					linkName: 'internship#first-rotation',
