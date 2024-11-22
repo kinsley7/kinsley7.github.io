@@ -47,6 +47,17 @@ const togglePopup = (name : string) => {
 const [location] = useLocation();
 useEffect(() => { if (location.includes('#')) { const elementId = location.split('#')[1]; const element = document.getElementById(elementId); if (element) { element.scrollIntoView({ behavior: 'smooth' }); } } }, [location]);
 
+const [isClient, setIsClient] = useState(false);
+
+// This ensures that the routing logic is only enabled in the browser
+useEffect(() => {
+  setIsClient(true);
+}, []);
+
+if (!isClient) {
+  // If it's not a client-side environment, return null or some placeholder
+  return null;
+}
     return (
       <main>
           <NavigationCard togglePopupResume={() => togglePopup('resume')}/>
