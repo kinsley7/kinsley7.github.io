@@ -9,10 +9,6 @@ import { WindowPopUp } from "@/components/compound/WindowPopUp";
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 
-export const metadata: Metadata = {
-  title: "Kinsley's Portfolio",
-  description: "My internship portfolio about my experience"
-};
 
 const sectionIds = [
   'about me',
