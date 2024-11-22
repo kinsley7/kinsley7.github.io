@@ -47,8 +47,6 @@ const togglePopup = (name : string) => {
 }
 const [location] = useLocation();
 useEffect(() => { if (location.includes('#')) { const elementId = location.split('#')[1]; const element = document.getElementById(elementId); if (element) { element.scrollIntoView({ behavior: 'smooth' }); } } }, [location]);
-
-
     return (
       <main>
           <NavigationCard togglePopupResume={() => togglePopup('resume')}/>
@@ -267,3 +265,7 @@ useEffect(() => { if (location.includes('#')) { const elementId = location.split
     </main>
   );
 }
+function dynamic(arg0: () => Promise<typeof import("./pages/internship")>, arg1: { ssr: boolean; }) {
+  throw new Error("Function not implemented.");
+}
+
