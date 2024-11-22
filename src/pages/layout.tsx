@@ -1,7 +1,3 @@
-import "@/style/globals.css";
-import "../style/globals.css";
-import "@/style/base.css";
-import "../style/base.css";
 import { Metadata } from "next";
 import { MainWindowCard } from "@/components/compound/MainWindowCard";
 import { NavigationCard } from "@/components/compound/NavigationCard";
