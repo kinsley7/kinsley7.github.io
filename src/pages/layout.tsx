@@ -17,7 +17,7 @@ const sectionIds = [
 ];
 
 
-export default function RootLayout({
+export default function MyApp({
   children,
 }: Readonly<{
   children: React.ReactNode;

@@ -1,4 +1,4 @@
-
+'use client'
 import { useRef, useState, useEffect} from "react";
 import Image from "next/image";
 import { MainWindowCard } from "@/components/compound/MainWindowCard";
