@@ -16,10 +16,6 @@ const sectionIds = [
   'third rotation'
 ];
 
-export const metadata: Metadata = {
-  title: "Kinsley's Portfolio",
-  description: "My internship portfolio about my experience",
-};
 
 export default function RootLayout({
   children,
