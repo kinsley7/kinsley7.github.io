@@ -16,9 +16,12 @@ const sectionIds = [
   'third rotation'
 ];
 
+export const metadata: Metadata = {
+  title: "Kinsley's Portfolio",
+  description: "My internship portfolio about my experience",
+};
 
-
-export default function MyApp({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

@@ -31,7 +31,6 @@ export const NavigationCard = ({togglePopupResume}:NavigationCardProps) => {
 			children: [
 				{
 					label: 'resume',
-					linkName: 'about-me#resume',
 					icon: <Image className="w-[20px] mr-1" src={Icons.PDF} alt=""/>,
 					callback: togglePopupResume
 				},

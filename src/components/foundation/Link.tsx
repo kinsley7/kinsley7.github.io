@@ -17,7 +17,7 @@ interface LinkProps extends IComponent {
 //if link is internal then use this svg in the ::after. if its external than a different svg
 
 //<Image classNames='w-[20px] p-1' src={externalLink} alt='external image'/>
-export const Link = ({type, url, children, callback} : LinkProps) => {
+export const MyLink = ({type, url, children, callback} : LinkProps) => {
 	if(type == 'external'){
 		return(
 				<span>

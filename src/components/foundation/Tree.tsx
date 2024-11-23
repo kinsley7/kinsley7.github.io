@@ -5,11 +5,12 @@ import Image from 'next/image';
 import { Row } from './Row';
 import { IComponent } from '../IComponent';
 import Link from 'next/link';
+import  {MyLink} from './Link';
 //import { Link, useLocation } from 'wouter';
 
 export interface TreeProps extends IComponent {
   label: string;
-  linkName : string
+  linkName ?: string
   icon ?: ReactNode; //if x then icon needs to be folder, if y then icon needs to be file etc (logic implemented in nav card)
   callback ?: () => void;
   children?: TreeProps[];
@@ -33,12 +34,13 @@ export const Tree = ({ classNames, label, children, icon, linkName, activeSectio
   const plusIcon = <Image className='w-[20px] h-auto cursor-pointer' src={plusBox} alt='open tree node'/>
 
   const toggleIcon = isOpen ? minusIcon : plusIcon
+  
 
   return (
     <div className={classNames}>
       <div onClick={handleToggle}> {/* this is the node itself*/}
         <Row classNames={hasChildren && toggleIcon ? '' : 'ml-1' }>
-          {hasChildren && toggleIcon } {icon} {<Link className='scroll-smooth' onClick={callback} href={`/${linkName}`}>{label}</Link>}
+          {hasChildren && toggleIcon } {icon} {linkName ? <Link className='scroll-smooth' onClick={callback} href={`/${linkName}`}>{label}</Link> : <MyLink type="internal" callback={callback}>{label}</MyLink>}
         </Row>
       </div>
       {isOpen && children?.map((section, index) => (

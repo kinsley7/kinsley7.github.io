@@ -2,7 +2,7 @@
 import { ReactNode } from "react";
 import { Card } from "../foundation/Card"
 import { Column } from "../foundation/Column"
-import { Link } from "../foundation/Link"
+import { MyLink } from "../foundation/Link"
 import { IComponent } from "../IComponent";
 import { Row } from "../foundation/Row";
 import { Icons } from "../foundation/Icons";
@@ -33,7 +33,7 @@ export const AboutMe = ({togglePopup} : AboutMeProps) => {
 			<h2>Career Goals</h2>
 			I want to continue learning, expanding my knowledge, and giving back by teaching others what I learned.
 			<br/>
-			<Link type="internal" callback={() => togglePopup('resume')}>Click here to view my resume.</Link>
+			<MyLink type="internal" callback={() => togglePopup('resume')}>Click here to view my resume.</MyLink>
 			<section id='contact'>
 			<h2>Contact Me!</h2>
 			You can reach out to me at: <span className="font-bold">crowdis@etsu.edu</span>

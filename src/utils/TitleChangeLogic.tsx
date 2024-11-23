@@ -1,14 +1,13 @@
 import { useEffect, useState, useRef, useCallback, RefObject, Fragment } from 'react';
-import { Link, Events, scrollSpy } from 'react-scroll';
 
 interface TitleChangeLogicProps {
   sectionIds: string[];
   scrollContainerRef: RefObject<HTMLDivElement>;
 }
 
-export const TitleChangeLogic =  ({ sectionIds, scrollContainerRef } : TitleChangeLogicProps) => {
+export const TitleChangeLogic = ({ sectionIds, scrollContainerRef }: TitleChangeLogicProps) => {
   const [activeSection, setActiveSection] = useState<string>('');
-  
+
   const handleScroll = useCallback(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
@@ -16,23 +15,16 @@ export const TitleChangeLogic =  ({ sectionIds, scrollContainerRef } : TitleChan
     let currentSection = '';
     for (const id of sectionIds) {
       const section = document.getElementById(id);
-      if (section && section.getBoundingClientRect().top <= container.scrollTop) {
-        let breadcrumb = id;
-        let parent = section.parentElement;
-
-        // Traverse up the DOM tree to build the breadcrumb
-        while (parent && parent.id) {
-          // Check if the parent is a section
-          if (parent.tagName.toLowerCase() === 'section') {
-            breadcrumb = `${parent.id} > ${breadcrumb}`;
-          }
-          parent = parent.parentElement;
+      if (section) {
+        const sectionTop = section.getBoundingClientRect().top + window.scrollY;  // Adjusted to account for full document scroll
+        if (sectionTop <= window.scrollY + window.innerHeight / 2) {
+          currentSection = id;
+        } else {
+          break;
         }
-        currentSection = breadcrumb;
-      } else {
-        break;
       }
     }
+
     setActiveSection(currentSection);
   }, [sectionIds, scrollContainerRef]);
 
@@ -40,6 +32,7 @@ export const TitleChangeLogic =  ({ sectionIds, scrollContainerRef } : TitleChan
     const container = scrollContainerRef.current;
     if (container) {
       container.addEventListener('scroll', handleScroll);
+      handleScroll(); // Trigger on mount to set initial state
     }
 
     return () => {
@@ -49,30 +42,37 @@ export const TitleChangeLogic =  ({ sectionIds, scrollContainerRef } : TitleChan
     };
   }, [handleScroll, scrollContainerRef]);
 
-  const sections = activeSection.split('>');
-
-  const getPageTitle = (path: string) => {
-    switch (path) {
-      case '/':
-        return 'home > about-me';
-      case '/school-artifacts':
-        return 'home > school-artifacts';
-      case '/internship':
-        return 'home > internship';
-      default:
-        return 'home';
-    }
-  };
+  useEffect(() => {
+    const sections = activeSection.split('>');
+    const pageTitle = sections.map(section => {
+      switch (section.trim()) {
+        case 'about me':
+          return 'About Me';
+        case 'contact':
+          return 'Contact';
+        case 'school artifacts':
+          return 'School Artifacts';
+        case 'internship':
+          return 'Internship';
+        case 'first rotation':
+          return 'First Rotation';
+        case 'second rotation':
+          return 'Second Rotation';
+        case 'third rotation':
+          return 'Third Rotation';
+        default:
+          return 'Home';
+      }
+    }).join(' > ');
+  }, [activeSection]);
 
   return (
     <>
       <div>
-        {sections.map((section, index) => (
+        {activeSection.split('>').map((section, index) => (
           <Fragment key={index}>
-            <a href={`#${section.trim()}`}>
-              {section.trim()}
-            </a>
-            {index < sections.length - 1 && ' > '}
+            {section.trim()}
+            {index < activeSection.split('>').length - 1 && ' > '}
           </Fragment>
         ))}
       </div>

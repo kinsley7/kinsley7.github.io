@@ -1,5 +1,5 @@
 import { CardWithTab } from "./CardWithTab"
-import { Link } from "../foundation/Link"
+import { MyLink } from "../foundation/Link"
 import { Card } from "../foundation/Card"
 import { Column } from "../foundation/Column"
 import { Icons } from "../foundation/Icons"
@@ -75,7 +75,7 @@ export const Internship = ({togglePopup} : InternshipProps) => {
                             },
                             {
                               title: 'There can be..',
-                              body : <span>More than one! This component is made using the {<Link type="external" url="https://react.dev/reference/react/useState">useState React Hook</Link>}</span>
+                              body : <span>More than one! This component is made using the {<MyLink type="external" url="https://react.dev/reference/react/useState">useState React Hook</MyLink>}</span>
                             }
                           ]}/>,
                           title : 'Accordion',
@@ -99,7 +99,7 @@ export const Internship = ({togglePopup} : InternshipProps) => {
               </Column>
                 <Column classNames=" mt-[12px] mb-[20px] items-center">
                 <h3 className="!bold">Artifact</h3>
-                <Link type="internal" callback={() => togglePopup('first artifact')}>Click here to read about my experience!</Link>
+                <MyLink type="internal" callback={() => togglePopup('first artifact')}>Click here to read about my experience!</MyLink>
                 </Column>
               </section>
               <section id="second-rotation">
@@ -126,7 +126,7 @@ export const Internship = ({togglePopup} : InternshipProps) => {
                   </Column>
                   <Column classNames=" mt-[12px] mb-[20px] items-center"> 
                   <h3 className="!bold">Artifact</h3>
-                  <Link type="internal" callback={() => togglePopup('second artifact')}>Click here to read about my experience!</Link>
+                  <MyLink type="internal" callback={() => togglePopup('second artifact')}>Click here to read about my experience!</MyLink>
                   </Column>
               </Column>
               </section>
@@ -147,7 +147,7 @@ export const Internship = ({togglePopup} : InternshipProps) => {
 				        </CardWithTab>
                 <Column classNames=" mt-[12px] mb-[20px] items-center"> 
                   <h3 className="!bold">Artifact</h3>
-                  <Link type="internal" callback={() => togglePopup('third artifact')}>Click here to read about my experience!</Link>
+                  <MyLink type="internal" callback={() => togglePopup('third artifact')}>Click here to read about my experience!</MyLink>
                   </Column>
               </Column>
               </section>

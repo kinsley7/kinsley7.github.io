@@ -23,8 +23,7 @@ export const WindowPopUp = ({classNames, title, children, isOpen, togglePopup}:W
 	if (!isOpen) {
 		return null;
 	}
-	const wrapper = createRef();
-	  
+	//const wrapper = createRef();
 	const dragHandlers = DragHandlers();
 	return <>
 		<Draggable handle="div" {...dragHandlers}>
